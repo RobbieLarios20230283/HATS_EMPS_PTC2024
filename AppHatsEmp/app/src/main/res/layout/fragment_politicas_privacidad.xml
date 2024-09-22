@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#D8D4F3"
+    tools:context=".ui.dashboard.DashboardFragment" >
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="413dp"
+        android:layout_height="107dp"
+        android:background="@drawable/bordes"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TextView
+            android:id="@+id/textViewCondiciones"
+            android:layout_width="281dp"
+            android:layout_height="74dp"
+            android:text="Poliricas de privacidad
+"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.194" />
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/hats_logo"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="316dp"
+        android:layout_height="95dp"
+        android:text="1. En Hats, respetamos y protegemos la privacidad de nuestros usuarios. Esta Política de Privacidad explica cómo recopilamos, utilizamos, compartimos y protegemos la información personal cuando usas nuestra aplicación."
+        tools:layout_editor_absoluteX="47dp"
+        tools:layout_editor_absoluteY="128dp" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="318dp"
+        android:layout_height="120dp"
+        android:text="2.Recopilamos diferentes tipos de información para proporcionarte un mejor servicio y mejorar tu experiencia en la aplicación. Los tipos de información que podemos recopilar incluyen:
+Información Personal: como nombre, dirección de correo electrónico, número de teléfono, datos de facturación y de cuenta."
+        tools:layout_editor_absoluteX="45dp"
+        tools:layout_editor_absoluteY="255dp" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="320dp"
+        android:layout_height="106dp"
+        android:text="3.Nos comprometemos a proteger tu información personal. Utilizamos medidas técnicas y organizativas adecuadas para garantizar que tu información esté segura y protegida contra accesos no autorizados, uso indebido o divulgación."
+        tools:layout_editor_absoluteX="45dp"
+        tools:layout_editor_absoluteY="384dp" />
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="322dp"
+        android:layout_height="110dp"
+        android:text="4.Nuestra aplicación no está dirigida a menores de 18 años, y no recopilamos conscientemente información personal de menores. Si eres padre o tutor y crees que hemos recopilado información de tu hijo, contáctanos para que podamos eliminar los datos."
+        tools:layout_editor_absoluteX="45dp"
+        tools:layout_editor_absoluteY="507dp" />
+
+    <Button
+        android:id="@+id/btnRegresar"
+        android:layout_width="65dp"
+        android:layout_height="49dp"
+        android:background="@drawable/boton"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        app:icon="@drawable/retroceso"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.046"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.935" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,10 +1,12 @@
 package ptc.hats2024
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -33,27 +35,23 @@ class fragment_infolegal : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_infolegal, container, false)
-    }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment fragment_infolegal.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            fragment_infolegal().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+        val root = inflater.inflate(R.layout.fragment_infolegal, container, false)
+
+        val Terminos = root.findViewById<Button>(R.id.button3)
+        val Pagos = root.findViewById<Button>(R.id.button4)
+
+        Terminos.setOnClickListener{
+            val Condiciones = Intent(requireContext(),Terminos_Condiciones::class.java)
+            startActivity(Condiciones)
+        }
+
+        Pagos.setOnClickListener{
+            val Pagosss = Intent(requireContext(), Condiciones_Pago::class.java)
+            startActivity(Pagosss)
+        }
+
+        return root
+
     }
 }

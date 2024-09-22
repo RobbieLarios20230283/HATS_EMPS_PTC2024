@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#D8D4F3"
+    tools:context=".ui.dashboard.DashboardFragment" >
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="413dp"
+        android:layout_height="107dp"
+        android:background="@drawable/bordes"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TextView
+            android:id="@+id/textViewCondiciones"
+            android:layout_width="281dp"
+            android:layout_height="74dp"
+            android:text="Terminos y Condiciones
+"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.194" />
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/hats_logo"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="316dp"
+        android:layout_height="108dp"
+        android:text="1. Aceptación de los Términos: Al descargar, instalar y utilizar la aplicación, el usuario acepta los siguientes términos y condiciones. Si no está de acuerdo con estos términos, el usuario no debe usar la aplicación."
+        tools:layout_editor_absoluteX="47dp"
+        tools:layout_editor_absoluteY="128dp" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="320dp"
+        android:layout_height="106dp"
+        android:text="2. Registro y Cuenta de Usuario: El usuario debe registrarse en la aplicación proporcionando información veraz y actualizada. El usuario es responsable de mantener la confidencialidad de su cuenta y contraseña, así como de todas las actividades que se realicen bajo su cuenta."
+        tools:layout_editor_absoluteX="47dp"
+        tools:layout_editor_absoluteY="255dp" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="318dp"
+        android:layout_height="87dp"
+        android:text="3. Uso Permitido: La aplicación solo debe ser utilizada para los fines que permite, relacionados con la gestión de pequeños negocios. Está prohibido el uso de la aplicación para cualquier actividad ilegal, inmoral o no autorizada."
+        tools:layout_editor_absoluteX="45dp"
+        tools:layout_editor_absoluteY="384dp" />
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="325dp"
+        android:layout_height="84dp"
+        android:text="4. Privacidad y Protección de Datos: La aplicación recopila ciertos datos personales del usuario, tales como nombre, correo electrónico y detalles del negocio. Estos datos serán utilizados únicamente para los fines descritos en la política de privacidad."
+        tools:layout_editor_absoluteX="38dp"
+        tools:layout_editor_absoluteY="501dp" />
+
+    <Button
+        android:id="@+id/btnRegresar"
+        android:layout_width="65dp"
+        android:layout_height="49dp"
+        android:background="@drawable/boton"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        app:icon="@drawable/retroceso"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.046"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.92" />
+</androidx.constraintlayout.widget.ConstraintLayout>

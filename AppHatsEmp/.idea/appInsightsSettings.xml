@@ -8,10 +8,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="ptc.hats2024" />
+                  <option name="mobileSdkAppId" value="1:527654001128:android:68fda6d160226237676c5d" />
+                  <option name="projectId" value="hast-50ffc" />
+                  <option name="projectNumber" value="527654001128" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />

@@ -1,7 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
-    id("com.google.gms.google-services") version "4.4.2" apply false
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -42,7 +42,8 @@ android {
 dependencies {
 
     implementation(libs.androidx.core.ktx)
-    implementation(platform("com.google.firebase:firebase-bom:33.1.1"))
+    implementation("com.oracle.database.jdbc:ojdbc8:19.8.0.0")
+    implementation ("com.google.android.material:material:1.9.0")
     implementation("com.google.firebase:firebase-analytics")
     implementation ("com.google.firebase:firebase-storage:19.2.1")
     implementation ("com.google.firebase:firebase-analytics:19.0.0")
@@ -57,4 +58,5 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    implementation(platform("com.google.firebase:firebase-bom:33.1.1"))
 }

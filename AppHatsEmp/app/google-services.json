@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "527654001128",
+    "project_id": "hast-50ffc",
+    "storage_bucket": "hast-50ffc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:527654001128:android:68fda6d160226237676c5d",
+        "android_client_info": {
+          "package_name": "ptc.hats2024"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCPr-xuCIeszr2k90KRdqGktrBE6iK7xew"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

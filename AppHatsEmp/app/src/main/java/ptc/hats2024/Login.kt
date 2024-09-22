@@ -20,10 +20,8 @@ class Login : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        val txtEmail : EditText = findViewById(R.id.txtEmail)
-        val txtPasswor : EditText = findViewById(R.id.txtContraseña)
-        val btnRegistro : Button = findViewById(R.id.btnRegistro)
-        val btnLogin : Button = findViewById(R.id.btnLog_in)
+        val btnRegistro : Button = findViewById(R.id.btnRegistrarseLogin)
+
 
         btnRegistro.setOnClickListener{
             val pantallaRegistro = Intent(this,Register::class.java)

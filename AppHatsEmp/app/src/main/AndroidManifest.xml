@@ -4,19 +4,18 @@
 
     <uses-feature
         android:name="android.hardware.camera"
-        android:required="false"></uses-feature>
+        android:required="false" />
 
-    <uses-permission
-        android:name="android.permission.READ_MEDIA_IMAGES"
-        tools:ignore="SelectedPhotoAccess"></uses-permission>
-    <uses-permission
-        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
-        android:maxSdkVersion="32"></uses-permission>
-    <uses-permission
-        android:name="android.permission.READ_EXTERNAL_STORAGE"
-        android:maxSdkVersion="32"></uses-permission>
-    <uses-permission android:name="android.permission.CAMERA"></uses-permission>
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES"
+        tools:ignore="SelectedPhotoAccess" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -32,10 +31,6 @@
             android:name=".ingreso_de_datos"
             android:exported="false" />
         <activity
-            android:name=".prueba"
-            android:exported="false"
-            android:label="@string/title_activity_prueba" />
-        <activity
             android:name=".Login"
             android:exported="true">
             <intent-filter>
@@ -50,7 +45,8 @@
         <activity
             android:name=".MainActivity"
             android:exported="false"
-            android:label="@string/app_name"></activity>
+            android:label="@string/app_name">
+        </activity>
     </application>
 
 </manifest>

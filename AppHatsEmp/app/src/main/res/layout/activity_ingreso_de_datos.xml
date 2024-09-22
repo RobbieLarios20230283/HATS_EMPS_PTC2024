@@ -10,61 +10,69 @@
     tools:layout_editor_absoluteX="0dp"
     tools:layout_editor_absoluteY="-30dp">
 
+
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:src="@drawable/pdf_icon"
+        android:layout_width="64dp"
+        android:layout_height="62dp"
+        android:src="@drawable/baseline_picture_as_pdf_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.267"
+        app:layout_constraintHorizontal_bias="0.337"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.853" />
+        app:layout_constraintVertical_bias="0.849" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="409dp"
-        android:layout_height="70dp"
+        android:layout_width="432dp"
+        android:layout_height="76dp"
         android:background="@drawable/bordes"
         android:orientation="vertical"
-        android:padding="16dp"
+        android:padding="15dp"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0">
 
+        <TextView
+            android:id="@+id/textViewIngreso"
+            android:layout_width="wrap_content"
+            android:layout_height="61dp"
+            android:text="Ingresa los siguientes datos para poder continuar"
+            android:textAlignment="center"
+
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="201dp"
+        android:layout_height="26dp"
+        android:text="Ingresa de que quieres trabajar"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.107" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/txtNombrePerfil"
         android:layout_width="238dp"
         android:layout_height="41dp"
         android:background="@drawable/edit_text"
-        android:inputType="text"
+        android:inputType="textEmailAddress"
         android:padding="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.242"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.187" />
-
-    <EditText
-        android:id="@+id/editTextnum"
-        android:layout_width="238dp"
-        android:layout_height="41dp"
-        android:background="@drawable/edit_text"
-        android:inputType="text"
-        android:padding="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.242"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.612" />
+        app:layout_constraintVertical_bias="0.271" />
 
     <TextView
         android:id="@+id/textViewNum"
@@ -74,99 +82,12 @@
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.597" />
+        app:layout_constraintVertical_bias="0.402" />
 
     <EditText
-        android:id="@+id/editText3"
-        android:layout_width="238dp"
-        android:layout_height="41dp"
-        android:background="@drawable/edit_text"
-        android:inputType="textEmailAddress"
-        android:padding="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.242"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.457" />
-
-    <TextView
-        android:id="@+id/textViewEmail"
-        android:layout_width="201dp"
-        android:layout_height="26dp"
-        android:text="Ingresa tu correo electronico"
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.464" />
-
-    <TextView
-        android:id="@+id/textViewEdad"
-        android:layout_width="201dp"
-        android:layout_height="26dp"
-        android:text="Ingresa tu edad"
-        android:textColor="@color/black"
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.335" />
-
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="201dp"
-        android:layout_height="26dp"
-        android:text="Ingresa Tu Area De Trabajo"
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.226" />
-
-    <TextView
-        android:id="@+id/textViewIngreso"
-        android:layout_width="222dp"
-        android:layout_height="43dp"
-        android:text="Ingresa los siguientes datos
-        para poder continuar"
-        android:textColor="@color/black"
-
-        android:textAlignment="center"
-        android:textSize="17sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.127" />
-
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="222dp"
-        android:layout_height="43dp"
-        android:text="Ingresa tus antecedentes"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.764" />
-
-    <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/txtAreaTrabajo"
         android:layout_width="238dp"
         android:layout_height="41dp"
         android:background="@drawable/edit_text"
@@ -174,37 +95,169 @@
         android:padding="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.242"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.31" />
-
-    <Button
-        android:id="@+id/buttonContinuar"
-        android:layout_width="114dp"
-        android:layout_height="44dp"
-        android:background="@drawable/boton"
-        android:text="Continuar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.942"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.937" />
+        app:layout_constraintVertical_bias="0.053" />
 
     <TextView
-        android:id="@+id/textView4"
-        android:layout_width="144dp"
-        android:layout_height="48dp"
-        android:text="Documento PDF"
-        android:textSize="19sp"
+        android:id="@+id/textViewEmail"
+        android:layout_width="201dp"
+        android:layout_height="26dp"
+        android:text="Ingrese un nombre de Perfil"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.576"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.856" />
+        app:layout_constraintVertical_bias="0.307" />
+
+    <EditText
+        android:id="@+id/txtEdad"
+        android:layout_width="238dp"
+        android:layout_height="41dp"
+        android:background="@drawable/edit_text"
+        android:inputType="text"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.162" />
+
+    <EditText
+        android:id="@+id/txtNumeroTelefono"
+        android:layout_width="238dp"
+        android:layout_height="41dp"
+        android:background="@drawable/edit_text"
+        android:inputType="text"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.381" />
+
+    <TextView
+        android:id="@+id/textViewEdad"
+        android:layout_width="201dp"
+        android:layout_height="26dp"
+        android:text="Ingresa tu fecha de nacimiento"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.212" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="226dp"
+        android:layout_height="26dp"
+        android:text="Ingresa tus antecedentes"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.529"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.763" />
+
+    <Button
+        android:id="@+id/btnRegistrarse"
+        android:layout_width="147dp"
+        android:layout_height="42dp"
+        android:background="@drawable/boton"
+        android:text="Registrarse"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.443"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.976" />
+
+    <TextView
+        android:id="@+id/txtUrlPdf"
+        android:layout_width="160dp"
+        android:layout_height="27dp"
+        android:text="Documento PDF"
+        android:textColor="@color/black"
+        android:textSize="19sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.894" />
+
+
+    <Button
+        android:id="@+id/btnTomarFoto"
+        android:layout_width="178dp"
+        android:layout_height="56dp"
+        android:background="@drawable/boton"
+        android:text="Toma una foto para el Perfil"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.068"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.703" />
+
+    <Button
+        android:id="@+id/btnPDF"
+        android:layout_width="144dp"
+        android:layout_height="55dp"
+        android:background="@drawable/boton"
+        android:text="Seleccionar PDF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.771"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.84" />
+
+    <ImageView
+        android:id="@+id/imgDui"
+        android:layout_width="157dp"
+        android:layout_height="119dp"
+        android:radius="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.874"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.584"
+        tools:srcCompat="@drawable/baseline_person_pin_24" />
+
+    <ImageView
+        android:id="@+id/imgPerfil"
+        android:layout_width="157dp"
+        android:layout_height="119dp"
+        android:radius="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.094"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.584"
+        tools:srcCompat="@drawable/baseline_account_circle_24" />
+
+    <Button
+        android:id="@+id/btnTomarFotoDui"
+        android:layout_width="178dp"
+        android:layout_height="56dp"
+        android:background="@drawable/boton"
+        android:text="Toma una foto de tu DUI"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.931"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.703" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

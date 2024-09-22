@@ -34,11 +34,11 @@ class Register : AppCompatActivity() {
         val btnRegresar = findViewById<Button>(R.id.btnRegresar)
 
         btnSiguiente.setOnClickListener {
-            val correo = txtCorreoRegistro.text.toString()
-            val contrasena = txtContrasenaRegistro.text.toString()
+            val correo : String = txtCorreoRegistro.text.toString()
+            val contrasena : String = txtContrasenaRegistro.text.toString()
             val confirmarContrasena = txtConfirmarContrasena.text.toString()
-            val nombreCompleto = txtNombreCompleto.text.toString()
-            val direccion = txtDireccion.text.toString()
+            val nombreCompleto : String = txtNombreCompleto.text.toString()
+            val direccion : String = txtDireccion.text.toString()
 
             if (correo.isEmpty() || contrasena.isEmpty() || confirmarContrasena.isEmpty() || nombreCompleto.isEmpty() || direccion.isEmpty()) {
                 Toast.makeText(this, "Por favor, completa todos los campos", Toast.LENGTH_SHORT)
@@ -48,14 +48,15 @@ class Register : AppCompatActivity() {
                 Toast.makeText(this, "Las contraseñas no coinciden", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             } else {
-                val intent = Intent(this, ingreso_de_datos::class.java)
-                intent.putExtra("correo", correo)
-                intent.putExtra("contrasena", contrasena)
-                intent.putExtra("nombreCompleto", nombreCompleto)
-                intent.putExtra("direccion", direccion)
-                startActivity(intent)
+                val sendInformation = Intent(this, ingreso_de_datos::class.java)
+                sendInformation.putExtra("correo", correo)
+                sendInformation.putExtra("contrasena", contrasena)
+                sendInformation.putExtra("nombreCompleto", nombreCompleto)
+                sendInformation.putExtra("direccion", direccion)
+                startActivity(sendInformation)
             }
         }
+
 
         btnRegresar.setOnClickListener {
             val intent = Intent(this, Login::class.java)

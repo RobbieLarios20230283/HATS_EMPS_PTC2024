@@ -31,6 +31,8 @@ class Register : AppCompatActivity() {
         val txtDireccion = findViewById<EditText>(R.id.txtDireccion)
         val btnSiguiente = findViewById<Button>(R.id.btnSiguiente)
 
+        val btnRegresar = findViewById<Button>(R.id.btnRegresar)
+
         btnSiguiente.setOnClickListener {
             val correo = txtCorreoRegistro.text.toString()
             val contrasena = txtContrasenaRegistro.text.toString()
@@ -53,6 +55,11 @@ class Register : AppCompatActivity() {
                 intent.putExtra("direccion", direccion)
                 startActivity(intent)
             }
+        }
+
+        btnRegresar.setOnClickListener {
+            val intent = Intent(this, Login::class.java)
+            startActivity(intent)
         }
     }
 }

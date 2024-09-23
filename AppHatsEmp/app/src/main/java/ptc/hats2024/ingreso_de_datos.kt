@@ -111,7 +111,7 @@ class ingreso_de_datos : AppCompatActivity() {
 
         GlobalScope.launch(Dispatchers.IO) {
             try {
-                val objConnection = ClaseConexion().cadenaConexion()
+                val objConnection = ClaseConexion().CadenaConexion()
                 if (objConnection != null) {
                     val statement = objConnection.prepareStatement(
                         "INSERT INTO Trabajador (uuidTrabajador, nombre, correo, Contrasena, direccion, Telefono, Servicios, nombrePerfil, fechadeNacimiento, antecedentesPDFUrl, duiTrabajadorUrl, fotoPerfilUrl) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)")

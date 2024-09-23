@@ -53,7 +53,7 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-    implementation("com.oracle.database.jdbc:ojdbc8:19.10.0.0")
+    implementation("com.oracle.database.jdbc:ojdbc6:11.2.0.4")
     implementation(platform("com.google.firebase:firebase-bom:33.1.1"))
     implementation ("com.google.android.material:material:1.9.0")
     implementation("com.google.firebase:firebase-analytics")

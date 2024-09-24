@@ -16,7 +16,8 @@ import kotlinx.coroutines.launch
 import java.sql.SQLException
 
 
-class Login : AppCompatActivity() {
+class
+Login : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -38,7 +39,7 @@ class Login : AppCompatActivity() {
             GlobalScope.launch(Dispatchers.IO) {
                 try {
                     val objConnection = ClaseConexion().cadenaConexion()
-                    val verification = objConnection?.prepareStatement("SELECT * FROM Trabajador WHERE (correo = ? OR nombrePerfil = ?) AND Contrasena = ?")!!
+                    val verification = objConnection?.prepareStatement("SELECT * FROM Trabajador WHERE correo = ?  AND Contrasena = ?")!!
 
                     // Asignar los valores a los parámetros
                     verification.setString(1, txtCorreoOrName.text.toString())

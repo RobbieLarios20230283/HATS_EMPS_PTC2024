@@ -89,21 +89,21 @@ class ingreso_de_datos : AppCompatActivity() {
         }
 
         btnRegistrarse.setOnClickListener {
-            val areaTrabajo = txtAreaTrabajo.text.toString()
-            val edad = txtFechaNacimiento.text.toString()
-            val numeroTelefono = txtNumeroTelefono.text.toString()
-            val nombrePerfil = txtNombrePerfil.text.toString()
+            val areaTrabajo : String = txtAreaTrabajo.text.toString()
+            val edad : String = txtFechaNacimiento.text.toString()
+            val numeroTelefono : String = txtNumeroTelefono.text.toString()
+            val nombrePerfil : String = txtNombrePerfil.text.toString()
 
             if (areaTrabajo.isNotEmpty() && edad.isNotEmpty() && numeroTelefono.isNotEmpty() && nombrePerfil.isNotEmpty()) {
-                GuardarInformacion(pdfUrl, duiUrl, perfilUrl)
+                GuardarInformacion(duiUrl, perfilUrl)
             } else {
                 Toast.makeText(this, "Por favor, completa todos los campos", Toast.LENGTH_SHORT).show()
             }
         }
     }
 
-    private fun GuardarInformacion(pdfUri: String?, imgDuiUri: String?, imgPerfilUri: String?) {
-        if(pdfUri.isNullOrEmpty() || imgDuiUri.isNullOrEmpty() || imgPerfilUri.isNullOrEmpty()) {
+    private fun GuardarInformacion(imgDuiUri: String?, imgPerfilUri: String?) {
+        if(imgDuiUri.isNullOrEmpty() || imgPerfilUri.isNullOrEmpty()) {
             runOnUiThread {
                 Toast.makeText(this, "Error: No se ha proporcionado todas las imágenes o PDF", Toast.LENGTH_SHORT).show()
             }
@@ -114,25 +114,22 @@ class ingreso_de_datos : AppCompatActivity() {
                 val objConnection = ClaseConexion().cadenaConexion()
                 if (objConnection != null) {
                     val statement = objConnection.prepareStatement(
-                        "INSERT INTO Trabajador (uuidTrabajador, nombre, correo, Contrasena, direccion, Telefono, Servicios, nombrePerfil, fechadeNacimiento, antecedentesPDFUrl, duiTrabajadorUrl, fotoPerfilUrl) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)")
+                        "INSERT INTO TrabajadorInfo (uuidTrabajadorInfo, Telefono, Servicios, nombrePerfil, fechadeNacimiento, duiTrabajadorUrl, fotoPerfilUrl) VALUES (?, ?, ?, ?, ?, ?, ?)")
 
                     statement.setString(1, uuid)
-                    statement.setString(2, nombre)
-                    statement.setString(3, correo)
-                    statement.setString(4, contraseña)
-                    statement.setString(5, direccion)
-                    statement.setString(6, txtNumeroTelefono.text.toString())
-                    statement.setString(7, txtAreaTrabajo.text.toString())
-                    statement.setString(8, txtNombrePerfil.text.toString())
-                    statement.setString(9, txtFechaNacimiento.text.toString())
-                    statement.setString(10, pdfUri)
-                    statement.setString(11, imgDuiUri)
-                    statement.setString(12, imgPerfilUri)
+                    statement.setString(2, txtNumeroTelefono.text.toString())
+                    statement.setString(3, txtAreaTrabajo.text.toString())
+                    statement.setString(4, txtNombrePerfil.text.toString())
+                    statement.setString(5, txtFechaNacimiento.text.toString())
+                    statement.setString(6, imgDuiUri)
+                    statement.setString(7, imgPerfilUri)
 
                     statement.executeUpdate()
 
                     withContext(Dispatchers.Main) {
                         Toast.makeText(this@ingreso_de_datos, "Información guardada correctamente", Toast.LENGTH_SHORT).show()
+                        val intent = Intent(this@ingreso_de_datos, Login::class.java)
+                        startActivity(intent)
                         limpiarCampos()
                     }
                 } else {

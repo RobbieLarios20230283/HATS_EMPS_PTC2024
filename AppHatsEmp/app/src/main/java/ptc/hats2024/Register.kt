@@ -1,6 +1,7 @@
 package ptc.hats2024
 
 
+import Modelo.ClaseConexion
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
@@ -10,10 +11,19 @@ import androidx.core.view.WindowInsetsCompat
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import java.sql.SQLException
+import java.util.UUID
 
 
 class Register : AppCompatActivity() {
+
+    private val uuid = UUID.randomUUID().toString()
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -24,6 +34,7 @@ class Register : AppCompatActivity() {
             insets
         }
 
+
         val txtCorreoRegistro = findViewById<EditText>(R.id.txtCorreoRegistro)
         val txtContrasenaRegistro = findViewById<EditText>(R.id.txtContraseñaReg)
         val txtConfirmarContrasena = findViewById<EditText>(R.id.txtConfirmarContraseña)
@@ -33,10 +44,24 @@ class Register : AppCompatActivity() {
 
         val btnRegresar = findViewById<Button>(R.id.btnRegresar)
 
+        fun limpiarCampos() {
+            txtCorreoRegistro.text.clear()
+            txtContrasenaRegistro.text.clear()
+            txtNombreCompleto.text.clear()
+            txtDireccion.text.clear()
+            txtConfirmarContrasena.text.clear()
+        }
+
+        btnRegresar.setOnClickListener {
+            val intent = Intent(this, Login::class.java)
+            startActivity(intent)
+        }
+
+
         btnSiguiente.setOnClickListener {
             val correo : String = txtCorreoRegistro.text.toString()
             val contrasena : String = txtContrasenaRegistro.text.toString()
-            val confirmarContrasena = txtConfirmarContrasena.text.toString()
+            val confirmarContrasena : String = txtConfirmarContrasena.text.toString()
             val nombreCompleto : String = txtNombreCompleto.text.toString()
             val direccion : String = txtDireccion.text.toString()
 
@@ -48,19 +73,69 @@ class Register : AppCompatActivity() {
                 Toast.makeText(this, "Las contraseñas no coinciden", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             } else {
-                val sendInformation = Intent(this, ingreso_de_datos::class.java)
-                sendInformation.putExtra("correo", correo)
-                sendInformation.putExtra("contrasena", contrasena)
-                sendInformation.putExtra("nombreCompleto", nombreCompleto)
-                sendInformation.putExtra("direccion", direccion)
-                startActivity(sendInformation)
+                // Insert data into Trabajador table
+                    GlobalScope.launch(Dispatchers.IO) {
+                        try {
+                            // Establish the connection
+                            val objConnection = ClaseConexion().cadenaConexion()
+                            if (objConnection != null) {
+                                // Prepare the SQL insert statement
+                                val statement = objConnection.prepareStatement(
+                                    "INSERT INTO Trabajador (uuidTrabajador, nombre, correo, Contrasena, direccion) VALUES (?, ?, ?, ?, ?)"
+                                )
+                                // Set the values for the prepared statement
+                                statement.setString(1, uuid)
+                                statement.setString(2, nombreCompleto)
+                                statement.setString(3, correo)
+                                statement.setString(4, contrasena)
+                                statement.setString(5, direccion)
+
+                                // Execute the insert
+                                statement.executeUpdate()
+
+                                // Switch to the Main thread for UI updates
+                                withContext(Dispatchers.Main) {
+                                    Toast.makeText(
+                                        this@Register,
+                                        "Información guardada correctamente",
+                                        Toast.LENGTH_SHORT
+                                    ).show()
+                                    val intent = Intent(this@Register, ingreso_de_datos::class.java)
+                                    startActivity(intent)
+                                    limpiarCampos()
+                                }
+                            } else {
+                                // Connection error
+                                withContext(Dispatchers.Main) {
+                                    Toast.makeText(
+                                        this@Register,
+                                        "Error de conexión a la base de datos",
+                                        Toast.LENGTH_SHORT
+                                    ).show()
+                                }
+                            }
+                        } catch (e: SQLException) {
+                            // Handle SQL exception
+                            withContext(Dispatchers.Main) {
+                                Toast.makeText(
+                                    this@Register,
+                                    "Error al guardar la información: ${e.message}",
+                                    Toast.LENGTH_SHORT
+                                ).show()
+                            }
+                        } catch (e: Exception) {
+                            // Handle any other exceptions
+                            withContext(Dispatchers.Main) {
+                                Toast.makeText(
+                                    this@Register,
+                                    "Error: ${e.message}",
+                                    Toast.LENGTH_SHORT
+                                ).show()
+                            }
+                        }
+                    }
+                }
+                }
             }
         }
 
-
-        btnRegresar.setOnClickListener {
-            val intent = Intent(this, Login::class.java)
-            startActivity(intent)
-        }
-    }
-}

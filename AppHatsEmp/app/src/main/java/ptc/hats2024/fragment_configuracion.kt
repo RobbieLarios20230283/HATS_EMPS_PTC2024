@@ -37,14 +37,14 @@ class fragment_configuracion : Fragment() {
     ): View? {
         val root = inflater.inflate(R.layout.fragment_configuracion, container, false)
 
-        val editarDatosPer = root.findViewById<Button>(R.id.button6)
+        val editarDato = root.findViewById<Button>(R.id.button6)
         val notificaciones = root.findViewById<Button>(R.id.button10)
         val infoLegal = root.findViewById<Button>(R.id.button11)
         val asistencia = root.findViewById<Button>(R.id.button12)
 
-        editarDatosPer.setOnClickListener{
-            val editarDatos = Intent(requireContext(),perfil::class.java)
-            startActivity(editarDatos)
+        editarDato.setOnClickListener{
+            val editarDatosPer = Intent(requireContext(),perfil::class.java)
+            startActivity(editarDatosPer)
         }
 
         notificaciones.setOnClickListener{

@@ -38,9 +38,9 @@ class Login : AppCompatActivity() {
             GlobalScope.launch(Dispatchers.IO) {
                 try {
                     val objConnection = ClaseConexion().cadenaConexion()
-                    val verification = objConnection?.prepareStatement("SELECT * FROM Trabajador WHERE (correo = ? OR nombrePerfil = ?) AND Contrasena = ?")!!
+                    val verification = objConnection?.prepareStatement("SELECT * FROM Trabajador WHERE correo = ?  AND Contrasena = ?")!!
 
-                    // Asignar los valores a los parámetros
+
                     verification.setString(1, txtCorreoOrName.text.toString())
                     verification.setString(2, txtContrasena.text.toString())
 

@@ -4,7 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/container"
     android:layout_width="match_parent"
+<<<<<<< HEAD
     android:layout_height="match_parent">
+=======
+    android:layout_height="match_parent"
+    >
+>>>>>>> d21f0bf4e055f656792180df4e175123dc5aedd0
 
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -20,8 +25,13 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
+<<<<<<< HEAD
         android:layout_width="469dp"
         android:layout_height="137dp"
+=======
+        android:layout_width="493dp"
+        android:layout_height="118dp"
+>>>>>>> d21f0bf4e055f656792180df4e175123dc5aedd0
         android:background="@drawable/bordes"
         android:orientation="vertical"
         android:padding="16dp"

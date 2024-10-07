@@ -59,11 +59,11 @@ class Register : AppCompatActivity() {
 
 
         btnSiguiente.setOnClickListener {
-            val correo : String = txtCorreoRegistro.text.toString()
-            val contrasena : String = txtContrasenaRegistro.text.toString()
-            val confirmarContrasena : String = txtConfirmarContrasena.text.toString()
-            val nombreCompleto : String = txtNombreCompleto.text.toString()
-            val direccion : String = txtDireccion.text.toString()
+            val correo: String = txtCorreoRegistro.text.toString()
+            val contrasena: String = txtContrasenaRegistro.text.toString()
+            val confirmarContrasena: String = txtConfirmarContrasena.text.toString()
+            val nombreCompleto: String = txtNombreCompleto.text.toString()
+            val direccion: String = txtDireccion.text.toString()
 
             if (correo.isEmpty() || contrasena.isEmpty() || confirmarContrasena.isEmpty() || nombreCompleto.isEmpty() || direccion.isEmpty()) {
                 Toast.makeText(this, "Por favor, completa todos los campos", Toast.LENGTH_SHORT)
@@ -74,68 +74,68 @@ class Register : AppCompatActivity() {
                 return@setOnClickListener
             } else {
                 // Insert data into Trabajador table
-                    GlobalScope.launch(Dispatchers.IO) {
-                        try {
-                            // Establish the connection
-                            val objConnection = ClaseConexion().cadenaConexion()
-                            if (objConnection != null) {
-                                // Prepare the SQL insert statement
-                                val statement = objConnection.prepareStatement(
-                                    "INSERT INTO Trabajador (uuidTrabajador, nombre, correo, Contrasena, direccion) VALUES (?, ?, ?, ?, ?)"
-                                )
-                                // Set the values for the prepared statement
-                                statement.setString(1, uuid)
-                                statement.setString(2, nombreCompleto)
-                                statement.setString(3, correo)
-                                statement.setString(4, contrasena)
-                                statement.setString(5, direccion)
+                GlobalScope.launch(Dispatchers.IO) {
+                    try {
+                        // Establish the connection
+                        val objConnection = ClaseConexion().cadenaConexion()
+                        if (objConnection != null) {
+                            // Prepare the SQL insert statement
+                            val statement = objConnection.prepareStatement(
+                                "INSERT INTO Trabajador (uuidTrabajador, nombre, correo, Contrasena, direccion) VALUES (?, ?, ?, ?, ?)"
+                            )
+                            // Set the values for the prepared statement
+                            statement.setString(1, uuid)
+                            statement.setString(2, nombreCompleto)
+                            statement.setString(3, correo)
+                            statement.setString(4, contrasena)
+                            statement.setString(5, direccion)
 
-                                // Execute the insert
-                                statement.executeUpdate()
+                            // Execute the insert
+                            statement.executeUpdate()
 
-                                // Switch to the Main thread for UI updates
-                                withContext(Dispatchers.Main) {
-                                    Toast.makeText(
-                                        this@Register,
-                                        "Información guardada correctamente",
-                                        Toast.LENGTH_SHORT
-                                    ).show()
-                                    val intent = Intent(this@Register, ingreso_de_datos::class.java)
-                                    startActivity(intent)
-                                    limpiarCampos()
-                                }
-                            } else {
-                                // Connection error
-                                withContext(Dispatchers.Main) {
-                                    Toast.makeText(
-                                        this@Register,
-                                        "Error de conexión a la base de datos",
-                                        Toast.LENGTH_SHORT
-                                    ).show()
-                                }
-                            }
-                        } catch (e: SQLException) {
-                            // Handle SQL exception
+                            // Switch to the Main thread for UI updates
                             withContext(Dispatchers.Main) {
                                 Toast.makeText(
                                     this@Register,
-                                    "Error al guardar la información: ${e.message}",
+                                    "Información guardada correctamente",
                                     Toast.LENGTH_SHORT
                                 ).show()
+                                val intent = Intent(this@Register, ingreso_de_datos::class.java)
+                                startActivity(intent)
+                                limpiarCampos()
                             }
-                        } catch (e: Exception) {
-                            // Handle any other exceptions
+                        } else {
+                            // Connection error
                             withContext(Dispatchers.Main) {
                                 Toast.makeText(
                                     this@Register,
-                                    "Error: ${e.message}",
+                                    "Error de conexión a la base de datos",
                                     Toast.LENGTH_SHORT
                                 ).show()
                             }
                         }
+                    } catch (e: SQLException) {
+                        // Handle SQL exception
+                        withContext(Dispatchers.Main) {
+                            Toast.makeText(
+                                this@Register,
+                                "Error al guardar la información: ${e.message}",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        }
+                    } catch (e: Exception) {
+                        // Handle any other exceptions
+                        withContext(Dispatchers.Main) {
+                            Toast.makeText(
+                                this@Register,
+                                "Error: ${e.message}",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        }
                     }
-                }
                 }
             }
         }
+    }
+}
 

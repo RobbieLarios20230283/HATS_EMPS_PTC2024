@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "206800417721",
+    "project_id": "hats-42ad3",
+    "storage_bucket": "hats-42ad3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:206800417721:android:5eb5b88d6b3583bf47bc68",
+        "android_client_info": {
+          "package_name": "hatsemp.ptc2024.hats"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "206800417721-cthd4f2se15mfc390fuo5sqvrkaa601j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDy74CW9tUsGReDwaaXKrvf3Ao5WQ1mEAg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "206800417721-cthd4f2se15mfc390fuo5sqvrkaa601j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:206800417721:android:94c92f13e172108d47bc68",
+        "android_client_info": {
+          "package_name": "hatsuser.ptc2024.hats"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "206800417721-cthd4f2se15mfc390fuo5sqvrkaa601j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDy74CW9tUsGReDwaaXKrvf3Ao5WQ1mEAg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "206800417721-cthd4f2se15mfc390fuo5sqvrkaa601j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

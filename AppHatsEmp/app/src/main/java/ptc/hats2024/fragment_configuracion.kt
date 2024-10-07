@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.navigation.fragment.findNavController
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -37,29 +38,25 @@ class fragment_configuracion : Fragment() {
     ): View? {
         val root = inflater.inflate(R.layout.fragment_configuracion, container, false)
 
-        val editarDato = root.findViewById<Button>(R.id.button6)
-        val notificaciones = root.findViewById<Button>(R.id.button10)
-        val infoLegal = root.findViewById<Button>(R.id.button11)
-        val asistencia = root.findViewById<Button>(R.id.button12)
+        val editarDato: Button = root.findViewById(R.id.button6)
+        val notificaciones: Button = root.findViewById(R.id.button10)
+        val infoLegal: Button = root.findViewById(R.id.button11)
+        val asistencia: Button = root.findViewById(R.id.button12)
 
         editarDato.setOnClickListener{
-            val editarDatosPer = Intent(requireContext(),perfil::class.java)
-            startActivity(editarDatosPer)
+            findNavController().navigate(R.id.perfil)
         }
 
         notificaciones.setOnClickListener{
-            val notifi = Intent(requireContext(), fragment_notificaciones::class.java)
-            startActivity(notifi)
+            findNavController().navigate(R.id.fragment_notificaciones2)
         }
 
         infoLegal.setOnClickListener{
-            val legal = Intent(requireContext(), fragment_infolegal::class.java)
-            startActivity(legal)
+            findNavController().navigate(R.id.fragment_infolegal)
         }
 
         asistencia.setOnClickListener{
-            val asis = Intent(requireContext(), fragment_asistencia::class.java)
-            startActivity(asis)
+            findNavController().navigate(R.id.fragment_asistencia)
         }
 
         return root

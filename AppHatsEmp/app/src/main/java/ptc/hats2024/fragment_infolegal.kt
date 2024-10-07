@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.navigation.fragment.findNavController
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -38,17 +39,10 @@ class fragment_infolegal : Fragment() {
 
         val root = inflater.inflate(R.layout.fragment_infolegal, container, false)
 
-        val Terminos = root.findViewById<Button>(R.id.button3)
-        val Pagos = root.findViewById<Button>(R.id.button4)
+        val terminosCondiciones: Button = root.findViewById(R.id.button3)
 
-        Terminos.setOnClickListener{
-            val Condiciones = Intent(requireContext(),Terminos_Condiciones::class.java)
-            startActivity(Condiciones)
-        }
-
-        Pagos.setOnClickListener{
-            val Pagosss = Intent(requireContext(), Condiciones_Pago::class.java)
-            startActivity(Pagosss)
+        terminosCondiciones.setOnClickListener{
+            findNavController().navigate(R.id.terminos_Condiciones)
         }
 
         return root

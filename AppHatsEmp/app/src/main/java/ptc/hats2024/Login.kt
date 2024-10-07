@@ -40,10 +40,7 @@ Login : AppCompatActivity() {
                 try {
                     val objConnection = ClaseConexion().cadenaConexion()
                     val verification = objConnection?.prepareStatement("SELECT * FROM Trabajador WHERE correo = ?  AND Contrasena = ?")!!
-<<<<<<< HEAD
-=======
 
->>>>>>> d21f0bf4e055f656792180df4e175123dc5aedd0
 
                     verification.setString(1, txtCorreoOrName.text.toString())
                     verification.setString(2, txtContrasena.text.toString())

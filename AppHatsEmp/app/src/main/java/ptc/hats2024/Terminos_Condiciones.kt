@@ -42,7 +42,7 @@ class Terminos_Condiciones : Fragment() {
 
 
         regresar.setOnClickListener{
-            findNavController().navigate(R.id.fragment_configuracion)
+            findNavController().navigate(R.id.fragment_infolegal)
         }
 
 

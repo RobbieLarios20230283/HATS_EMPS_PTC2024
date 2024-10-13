@@ -1,12 +1,12 @@
 package ptc.hats2024
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.navigation.fragment.findNavController
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -15,10 +15,10 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [politicas_privacidad.newInstance] factory method to
+ * Use the [Terminos_Pago.newInstance] factory method to
  * create an instance of this fragment.
  */
-class politicas_privacidad : Fragment() {
+class Terminos_Pago : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -35,13 +35,14 @@ class politicas_privacidad : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val root = inflater.inflate(R.layout.fragment_terminos__condiciones, container, false)
 
-        val regresar = root.findViewById<Button>(R.id.btnRegresar)
+        val root = inflater.inflate(R.layout.fragment_terminos__pago, container, false)
 
-        regresar.setOnClickListener{
-            val regresar = Intent(requireContext(),fragment_infolegal::class.java)
-            startActivity(regresar)
+        val regresarr: Button = root.findViewById(R.id.btnRegresar)
+
+
+        regresarr.setOnClickListener{
+            findNavController().navigate(R.id.fragment_infolegal)
         }
 
         return root

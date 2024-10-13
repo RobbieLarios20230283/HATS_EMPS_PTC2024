@@ -40,11 +40,25 @@ class fragment_infolegal : Fragment() {
         val root = inflater.inflate(R.layout.fragment_infolegal, container, false)
 
         val terminosCondiciones: Button = root.findViewById(R.id.button3)
+        val terminos_Pagos: Button = root.findViewById(R.id.button4)
+        val Politicas: Button = root.findViewById(R.id.button5)
+        val regresarrrrr: Button = root.findViewById(R.id.btnRegresar)
 
         terminosCondiciones.setOnClickListener{
             findNavController().navigate(R.id.terminos_Condiciones)
         }
 
+        terminos_Pagos.setOnClickListener{
+            findNavController().navigate(R.id.terminos_Pago)
+        }
+
+        Politicas.setOnClickListener{
+            findNavController().navigate(R.id.politicas)
+        }
+
+        regresarrrrr.setOnClickListener{
+            findNavController().navigate(R.id.fragment_configuracion)
+        }
         return root
 
     }

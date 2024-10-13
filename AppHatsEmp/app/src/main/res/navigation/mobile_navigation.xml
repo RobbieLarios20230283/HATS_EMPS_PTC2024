@@ -62,5 +62,25 @@
         android:name="ptc.hats2024.fragment_notificaciones"
         android:label="fragment_notificaciones"
         tools:layout="@layout/fragment_notificaciones" />
+    <fragment
+        android:id="@+id/perfil"
+        android:name="ptc.hats2024.Perfil"
+        android:label="fragment_perfil"
+        tools:layout="@layout/fragment_perfil" />
+    <fragment
+        android:id="@+id/terminos_Condiciones"
+        android:name="ptc.hats2024.Terminos_Condiciones"
+        android:label="fragment_terminos__condiciones"
+        tools:layout="@layout/fragment_terminos__condiciones" />
+    <fragment
+        android:id="@+id/terminos_Pago"
+        android:name="ptc.hats2024.Terminos_Pago"
+        android:label="fragment_terminos__pago"
+        tools:layout="@layout/fragment_terminos__pago" />
+    <fragment
+        android:id="@+id/politicas"
+        android:name="ptc.hats2024.Politicas"
+        android:label="fragment_politicas"
+        tools:layout="@layout/fragment_politicas" />
 
 </navigation>

@@ -21,9 +21,6 @@ import java.util.UUID
 
 class Register : AppCompatActivity() {
 
-    private val uuid = UUID.randomUUID().toString()
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -78,6 +75,8 @@ class Register : AppCompatActivity() {
                     try {
                         // Establish the connection
                         val objConnection = ClaseConexion().cadenaConexion()
+                        val uuid = UUID.randomUUID().toString()
+
                         if (objConnection != null) {
                             // Prepare the SQL insert statement
                             val statement = objConnection.prepareStatement(
@@ -101,7 +100,9 @@ class Register : AppCompatActivity() {
                                     Toast.LENGTH_SHORT
                                 ).show()
                                 val intent = Intent(this@Register, ingreso_de_datos::class.java)
+                                intent.putExtra("uuidTrabajador", uuid)
                                 startActivity(intent)
+
                                 limpiarCampos()
                             }
                         } else {

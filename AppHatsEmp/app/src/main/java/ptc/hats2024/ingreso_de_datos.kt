@@ -44,6 +44,7 @@ class ingreso_de_datos : AppCompatActivity() {
 
     private val codigo_opcion_pdf = 104
     private val uuid = UUID.randomUUID().toString()
+    private lateinit var uuidTrabajador : String
     private lateinit var pdfUri: Uri
 
     // Variables para almacenar las URLs de Firebase
@@ -73,6 +74,13 @@ class ingreso_de_datos : AppCompatActivity() {
         val btnRegistrarse: Button = findViewById(R.id.btnRegistrarse)
         val btnPdf: Button = findViewById(R.id.btnPDF)
         val btnTomarFotoDui: Button = findViewById(R.id.btnTomarFotoDui)
+
+        uuidTrabajador = intent.getStringExtra("uuidTrabajador") ?: ""
+
+        if (uuidTrabajador.isEmpty()) {
+            Toast.makeText(this, "UUID del usuario no disponible", Toast.LENGTH_SHORT).show()
+            return
+        }
 
         btnTomarFoto.setOnClickListener {
             isDuiCapture = false
@@ -114,15 +122,25 @@ class ingreso_de_datos : AppCompatActivity() {
                 val objConnection = ClaseConexion().cadenaConexion()
                 if (objConnection != null) {
                     val statement = objConnection.prepareStatement(
-                        "INSERT INTO TrabajadorInfo (uuidTrabajadorInfo, Telefono, Servicios, nombrePerfil, fechadeNacimiento, duiTrabajadorUrl, fotoPerfilUrl) VALUES (?, ?, ?, ?, ?, ?, ?)")
+                        """
+                       UPDATE Trabajador 
+                       SET 
+                       telefono = ?, 
+                       servicios = ?, 
+                       nombrePerfil = ?, 
+                       fechadeNacimiento = ?, 
+                       duiTrabajadorUrl = ?, 
+                       fotoPerfilUrl = ? 
+                       WHERE uuidTrabajador = ?
+                       """)!!
 
-                    statement.setString(1, uuid)
-                    statement.setString(2, txtNumeroTelefono.text.toString())
-                    statement.setString(3, txtAreaTrabajo.text.toString())
-                    statement.setString(4, txtNombrePerfil.text.toString())
-                    statement.setString(5, txtFechaNacimiento.text.toString())
-                    statement.setString(6, imgDuiUri)
-                    statement.setString(7, imgPerfilUri)
+                    statement.setString(1, txtNumeroTelefono.text.toString())
+                    statement.setString(2, txtAreaTrabajo.text.toString())
+                    statement.setString(3, txtNombrePerfil.text.toString())
+                    statement.setString(4, txtFechaNacimiento.text.toString())
+                    statement.setString(5, duiUrl)
+                    statement.setString(6, perfilUrl)
+                    statement.setString(7, uuidTrabajador)
 
                     statement.executeUpdate()
 
@@ -149,6 +167,7 @@ class ingreso_de_datos : AppCompatActivity() {
         }
     }
     private fun limpiarCampos() {
+
         txtFechaNacimiento.text.clear()
         txtAreaTrabajo.text.clear()
         txtNombrePerfil.text.clear()

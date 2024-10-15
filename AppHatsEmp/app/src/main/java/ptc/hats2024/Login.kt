@@ -14,10 +14,22 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import java.sql.SQLException
+import java.nio.charset.StandardCharsets
+import java.security.MessageDigest
 
 
-class
-Login : AppCompatActivity() {
+fun encriptacionSHA256(contrasena: String): String {
+    val digest = MessageDigest.getInstance("SHA-256")
+    val hash = digest.digest(contrasena.toByteArray(StandardCharsets.UTF_8))
+    val hexString = StringBuilder()
+    for (byte in hash) {
+        val hex = String.format("%02x", byte)
+        hexString.append(hex)
+    }
+    return hexString.toString()
+}
+
+class Login : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -27,23 +39,29 @@ Login : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        val btnRegistro : Button = findViewById(R.id.btnRegistrarseLogin)
 
-        val txtCorreoOrName : EditText = findViewById(R.id.txtCorreoOrNameLogin)
-        val txtContrasena : EditText = findViewById(R.id.txtContrasenaLogin)
-        val btnLogin : Button = findViewById(R.id.btnIniciarSesion)
-
+        val btnRegistro: Button = findViewById(R.id.btnRegistrarseLogin)
+        val txtCorreoOrName: EditText = findViewById(R.id.txtCorreoOrNameLogin)
+        val txtContrasena: EditText = findViewById(R.id.txtContrasenaLogin)
+        val btnLogin: Button = findViewById(R.id.btnIniciarSesion)
 
         btnLogin.setOnClickListener {
             val ScreenMain = Intent(this, MainActivity::class.java)
             GlobalScope.launch(Dispatchers.IO) {
                 try {
                     val objConnection = ClaseConexion().cadenaConexion()
-                    val verification = objConnection?.prepareStatement("SELECT * FROM Trabajador WHERE correo = ?  AND Contrasena = ?")!!
 
 
+                    val verification = objConnection?.prepareStatement(
+                        "SELECT * FROM Trabajador WHERE correo = ? AND Contrasena = ?"
+                    )!!
+
+
+                    val contrasenaEncriptada = encriptacionSHA256(txtContrasena.text.toString())
+
+                    // Pasar los valores al query
                     verification.setString(1, txtCorreoOrName.text.toString())
-                    verification.setString(2, txtContrasena.text.toString())
+                    verification.setString(2, contrasenaEncriptada)
 
                     val result = verification.executeQuery()
 
@@ -78,9 +96,8 @@ Login : AppCompatActivity() {
             }
         }
 
-
-        btnRegistro.setOnClickListener{
-            val pantallaRegistro = Intent(this,Register::class.java)
+        btnRegistro.setOnClickListener {
+            val pantallaRegistro = Intent(this, Register::class.java)
             startActivity(pantallaRegistro)
         }
     }

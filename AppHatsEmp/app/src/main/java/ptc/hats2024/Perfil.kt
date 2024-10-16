@@ -1,59 +1,77 @@
 package ptc.hats2024
 
+import DataList.PerfilTrabajador
+import Modelo.ClaseConexion
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
+import android.widget.TextView
+import ptc.hats2024.Login.VaraibleGlobal.CorreoGlobal
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [Perfil.newInstance] factory method to
- * create an instance of this fragment.
- */
 class Perfil : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_perfil, container, false)
-    }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment Perfil.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            Perfil().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+        val root = inflater.inflate(R.layout.fragment_perfil, container, false)
+
+        fun PerfilUser(): List<PerfilTrabajador> {
+            val Correo = CorreoGlobal
+            val objConexion = ClaseConexion().cadenaConexion()
+            val statement = objConexion?.createStatement()
+
+            val resultSet = statement?.executeQuery("SELECT * FROM Trabajador WHERE CorreoUS = '$Correo'")
+            val listaTrabajador = mutableListOf<PerfilTrabajador>()
+
+            if (resultSet != null) {
+                while (resultSet.next()) {
+                    val nombre = resultSet.getString("nombre")
+                    val correo = resultSet.getString("correo")
+                    val contrasena = resultSet.getString("contrasena")
+                    val direccion = resultSet.getString("direccion")
+                    val telefono = resultSet.getString("telefono")
+                    val servicio = resultSet.getString("servicio")
+                    val nombrePerfil = resultSet.getString("nombrePerfil")
+                    val imagenPerfil = resultSet.getString("imagenPerfil")
+
+                    val perfilTrabajador = PerfilTrabajador(nombre, correo, direccion, telefono, servicio, nombrePerfil, imagenPerfil)
+                    listaTrabajador.add(perfilTrabajador)
+
                 }
             }
+            return listaTrabajador
+        }
+        val perfilTrabajadorLista = PerfilUser()
+        if (perfilTrabajadorLista.isNotEmpty()){
+            val perfilTrabajador = perfilTrabajadorLista[0]
+
+            val nombre = root.findViewById<EditText>(R.id.editTextNombre)
+            nombre.setText(perfilTrabajador.nombre)
+
+            val correo = root.findViewById<EditText>(R.id.editTextEmail)
+            correo.setText(perfilTrabajador.correo)
+
+            val direccion = root.findViewById<EditText>(R.id.editTextDireccion)
+            direccion.setText(perfilTrabajador.direccion)
+
+            val telefono = root.findViewById<EditText>(R.id.editTextTelefono)
+            telefono.setText(perfilTrabajador.telefono)
+
+            val servicios = root.findViewById<EditText>(R.id.editTextServicios)
+            servicios.setText(perfilTrabajador.servicio)
+
+            val nombrePerfil = root.findViewById<EditText>(R.id.editTextPerfil)
+            nombrePerfil.setText(perfilTrabajador.nombrePerfil)
+
+            val imagenPerfil = root.findViewById<TextView>(R.id.imgPerfilUser)
+            imagenPerfil.text = perfilTrabajador.imagenPerfil
+
+        }
+        return root
     }
+
 }

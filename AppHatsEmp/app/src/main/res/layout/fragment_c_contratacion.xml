@@ -48,7 +48,7 @@
 
 
     <EditText
-        android:id="@+id/editTextText3"
+        android:id="@+id/editTextFechaNacimiento"
         android:layout_width="191dp"
         android:layout_height="47dp"
         android:text="Cerrajero Daniel"

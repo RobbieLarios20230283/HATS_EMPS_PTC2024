@@ -30,6 +30,12 @@ fun encriptacionSHA256(contrasena: String): String {
 }
 
 class Login : AppCompatActivity() {
+
+    companion object VaraibleGlobal{
+        lateinit var CorreoGlobal: String
+    }
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -41,11 +47,14 @@ class Login : AppCompatActivity() {
         }
 
         val btnRegistro: Button = findViewById(R.id.btnRegistrarseLogin)
-        val txtCorreoOrName: EditText = findViewById(R.id.txtCorreoOrNameLogin)
+        val txtCorreo: EditText = findViewById(R.id.txtCorreoOrNameLogin)
         val txtContrasena: EditText = findViewById(R.id.txtContrasenaLogin)
         val btnLogin: Button = findViewById(R.id.btnIniciarSesion)
 
         btnLogin.setOnClickListener {
+
+            CorreoGlobal = txtCorreo.text.toString()
+
             val ScreenMain = Intent(this, MainActivity::class.java)
             GlobalScope.launch(Dispatchers.IO) {
                 try {
@@ -60,7 +69,7 @@ class Login : AppCompatActivity() {
                     val contrasenaEncriptada = encriptacionSHA256(txtContrasena.text.toString())
 
                     // Pasar los valores al query
-                    verification.setString(1, txtCorreoOrName.text.toString())
+                    verification.setString(1, txtCorreo.text.toString())
                     verification.setString(2, contrasenaEncriptada)
 
                     val result = verification.executeQuery()

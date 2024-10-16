@@ -100,7 +100,7 @@ class Register : AppCompatActivity() {
             // Inserción de datos en la tabla Trabajador
             GlobalScope.launch(Dispatchers.IO) {
                 try {
-                    val objConnection = ClaseConexion().cadenaConexion()
+                    val objConnection = ClaseConexion().CadenaConexion()
                     val uuid = UUID.randomUUID().toString()
 
                     if (objConnection != null) {

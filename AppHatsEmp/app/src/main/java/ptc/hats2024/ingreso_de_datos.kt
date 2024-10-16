@@ -266,7 +266,7 @@ class ingreso_de_datos : AppCompatActivity() {
         return withContext(Dispatchers.IO){
             val nombreServicios = mutableListOf<DataListServicio>()
 
-            val objConnection = ClaseConexion().cadenaConexion()
+            val objConnection = ClaseConexion().CadenaConexion()
             objConnection?.let {
                 try {
                     val query = "SELECT uuidServicios, NombreServicios FROM tbservicios"

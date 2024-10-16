@@ -1,8 +1,8 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.Hats_EmpPTC" parent="Theme.Material3.Light.NoActionBar">
+    <style name="Theme.Hats_EmpPTC" parent="Theme.Material3.Dark">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">#BCEAD5</item>
+        <item name="colorPrimary">#FFC0C0</item>
         <item name="colorPrimaryVariant">@color/teal_200</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->

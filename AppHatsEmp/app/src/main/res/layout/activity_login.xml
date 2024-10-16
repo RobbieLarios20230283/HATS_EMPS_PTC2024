@@ -8,27 +8,13 @@
     android:background="#D8D4F3"
     tools:context=".MainActivity">
 
-<<<<<<< HEAD
-    <TextView
-        android:id="@+id/Contraseña"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="INGRESA TU CONTRASEÑA"
-        android:textColor="#32644F"
-        android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.301" />
-=======
+
     <!-- ScrollView que permite el desplazamiento vertical -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true">
->>>>>>> ccf6e455b6bacdb55cb81e24a14d0dcaf2651108
+
 
         <!-- ConstraintLayout contenido dentro del ScrollView -->
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -79,49 +65,8 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginTop="10dp" />
 
-<<<<<<< HEAD
-    <EditText
-        android:id="@+id/txtContrasenaLogin"
-        android:layout_width="290dp"
-        android:layout_height="49dp"
-        android:background="@drawable/edit_text"
-        android:inputType="textPassword"
-        android:padding="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.414" />
 
-    <TextView
-        android:id="@+id/Correo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="INGRESA TU CORREO"
-        android:textColor="#32644F"
-        android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.456"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.094" />
 
-    <EditText
-        android:id="@+id/txtCorreoOrNameLogin"
-        android:layout_width="290dp"
-        android:layout_height="49dp"
-        android:background="@drawable/edit_text"
-        android:inputType="textEmailAddress"
-        android:padding="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.174" />
-=======
             <EditText
                 android:id="@+id/txtCorreoOrNameLogin"
                 android:layout_width="290dp"
@@ -157,7 +102,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginTop="10dp" />
->>>>>>> ccf6e455b6bacdb55cb81e24a14d0dcaf2651108
 
             <Button
                 android:id="@+id/btnIniciarSesion"

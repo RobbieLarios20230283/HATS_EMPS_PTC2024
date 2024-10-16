@@ -13,12 +13,11 @@ import android.widget.Toast
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
+import oracle.net.aso.e
 import java.sql.SQLException
-<<<<<<< HEAD
-=======
 import java.nio.charset.StandardCharsets
 import java.security.MessageDigest
->>>>>>> ccf6e455b6bacdb55cb81e24a14d0dcaf2651108
+
 
 
 fun encriptacionSHA256(contrasena: String): String {
@@ -49,12 +48,7 @@ class Login : AppCompatActivity() {
             insets
         }
 
-<<<<<<< HEAD
-        val txtCorreoOrName : EditText = findViewById(R.id.txtCorreoOrNameLogin)
-        val txtContrasena : EditText = findViewById(R.id.txtContrasenaLogin)
-        val btnLogin : Button = findViewById(R.id.btnIniciarSesion)
-        val btnRegistro : Button = findViewById(R.id.btnRegistrarseLogin)
-=======
+
         val btnRegistro: Button = findViewById(R.id.btnRegistrarseLogin)
         val txtCorreo: EditText = findViewById(R.id.txtCorreoOrNameLogin)
         val txtContrasena: EditText = findViewById(R.id.txtContrasenaLogin)
@@ -64,103 +58,55 @@ class Login : AppCompatActivity() {
 
             CorreoGlobal = txtCorreo.text.toString()
 
-            val ScreenMain = Intent(this, MainActivity::class.java)
-            GlobalScope.launch(Dispatchers.IO) {
-                try {
-                    val objConnection = ClaseConexion().cadenaConexion()
->>>>>>> ccf6e455b6bacdb55cb81e24a14d0dcaf2651108
+            btnLogin.setOnClickListener {
+                val ScreenMain = Intent(this, MainActivity::class.java)
+                GlobalScope.launch(Dispatchers.IO) {
+                    try {
+                        val objConnection = ClaseConexion().CadenaConexion()
+                        val verification =
+                            objConnection?.prepareStatement("SELECT * FROM Trabajador WHERE correo = ? AND Contrasena = ?")!!
 
-        btnLogin.setOnClickListener {
-            val ScreenMain = Intent(this, MainActivity::class.java)
-            GlobalScope.launch(Dispatchers.IO) {
-                try {
-                    val objConnection = ClaseConexion().CadenaConexion()
-                    val verification = objConnection?.prepareStatement("SELECT * FROM Trabajador WHERE (correo = ? OR nombrePerfil = ?) AND Contrasena = ?")!!
+                        // Asignar los valores a los parámetros
+                        verification.setString(1, txtCorreo.text.toString())
+                        verification.setString(2, txtContrasena.text.toString())
 
-                    // Asignar los valores a los parámetros
-                    verification.setString(1, txtCorreoOrName.text.toString())
-                    verification.setString(2, txtContrasena.text.toString())
+                        val result = verification.executeQuery()
 
-                    val result = verification.executeQuery()
-
-                    if (result.next()) {
-                        startActivity(ScreenMain)
-                    } else {
+                        if (result.next()) {
+                            startActivity(ScreenMain)
+                        } else {
+                            runOnUiThread {
+                                Toast.makeText(
+                                    this@Login,
+                                    "Correo o contraseña incorrectos",
+                                    Toast.LENGTH_SHORT
+                                ).show()
+                            }
+                        }
+                    } catch (e: SQLException) {
                         runOnUiThread {
                             Toast.makeText(
                                 this@Login,
-                                "Correo o contraseña incorrectos",
+                                "Error en la conexión a la base de datos: ${e.message}",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        }
+                    } catch (e: Exception) {
+                        runOnUiThread {
+                            Toast.makeText(
+                                this@Login,
+                                "Ocurrió un error: ${e.message}",
                                 Toast.LENGTH_SHORT
                             ).show()
                         }
                     }
-                } catch (e: SQLException) {
-                    runOnUiThread {
-                        Toast.makeText(
-                            this@Login,
-                            "Error en la conexión a la base de datos: ${e.message}",
-                            Toast.LENGTH_SHORT
-                        ).show()
-                    }
-                } catch (e: Exception) {
-                    runOnUiThread {
-                        Toast.makeText(
-                            this@Login,
-                            "Ocurrió un error: ${e.message}",
-                            Toast.LENGTH_SHORT
-                        ).show()
-                    }
                 }
             }
-        }
 
-                    val verification = objConnection?.prepareStatement(
-                        "SELECT * FROM Trabajador WHERE correo = ? AND Contrasena = ?"
-                    )!!
-
-
-                    val contrasenaEncriptada = encriptacionSHA256(txtContrasena.text.toString())
-
-                    // Pasar los valores al query
-                    verification.setString(1, txtCorreo.text.toString())
-                    verification.setString(2, contrasenaEncriptada)
-
-                    val result = verification.executeQuery()
-
-                    if (result.next()) {
-                        startActivity(ScreenMain)
-                    } else {
-                        runOnUiThread {
-                            Toast.makeText(
-                                this@Login,
-                                "Correo o contraseña incorrectos",
-                                Toast.LENGTH_SHORT
-                            ).show()
-                        }
-                    }
-                } catch (e: SQLException) {
-                    runOnUiThread {
-                        Toast.makeText(
-                            this@Login,
-                            "Error en la conexión a la base de datos: ${e.message}",
-                            Toast.LENGTH_SHORT
-                        ).show()
-                    }
-                } catch (e: Exception) {
-                    runOnUiThread {
-                        Toast.makeText(
-                            this@Login,
-                            "Ocurrió un error: ${e.message}",
-                            Toast.LENGTH_SHORT
-                        ).show()
-                    }
-                }
+            btnRegistro.setOnClickListener {
+                val pantallaRegistro = Intent(this, Register::class.java)
+                startActivity(pantallaRegistro)
             }
-        }
-
-        btnRegistro.setOnClickListener {
-            val pantallaRegistro = Intent(this, Register::class.java)
-            startActivity(pantallaRegistro)
         }
     }
 }

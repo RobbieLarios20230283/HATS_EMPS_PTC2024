@@ -151,5 +151,20 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.588" />
 
+    <Button
+        android:id="@+id/btnRegresar"
+        android:layout_width="65dp"
+        android:layout_height="49dp"
+        android:background="@drawable/boton"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        app:icon="@drawable/retroceso"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.046"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.935" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

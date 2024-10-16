@@ -8,6 +8,7 @@
     android:background="#D8D4F3"
     tools:context=".MainActivity">
 
+<<<<<<< HEAD
     <TextView
         android:id="@+id/Contraseña"
         android:layout_width="wrap_content"
@@ -21,44 +22,64 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
         app:layout_constraintVertical_bias="0.301" />
+=======
+    <!-- ScrollView que permite el desplazamiento vertical -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+>>>>>>> ccf6e455b6bacdb55cb81e24a14d0dcaf2651108
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="417dp"
-        android:layout_height="224dp"
-        android:background="@drawable/bordes"
-        android:orientation="vertical"
-        android:padding="16dp"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.333"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        <!-- ConstraintLayout contenido dentro del ScrollView -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="398dp"
-            android:layout_height="120dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="16dp"
-            android:src="@drawable/hats_logo" />
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="417dp"
+                android:layout_height="224dp"
+                android:background="@drawable/bordes"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:textAlignment="center"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="8dp"
-            android:text="HATS"
-            android:textColor="#FFFFFF"
-            android:textSize="34sp"
-            android:textStyle="bold" />
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="398dp"
+                    android:layout_height="120dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="16dp"
+                    android:src="@drawable/hats_logo" />
 
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:text="HATS"
+                    android:textColor="#FFFFFF"
+                    android:textSize="34sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
 
-    </LinearLayout>
+            <TextView
+                android:id="@+id/Correo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="INGRESA TU CORREO"
+                android:textColor="#32644F"
+                android:textSize="15sp"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="10dp" />
 
+<<<<<<< HEAD
     <EditText
         android:id="@+id/txtContrasenaLogin"
         android:layout_width="290dp"
@@ -100,46 +121,81 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
         app:layout_constraintVertical_bias="0.174" />
+=======
+            <EditText
+                android:id="@+id/txtCorreoOrNameLogin"
+                android:layout_width="290dp"
+                android:layout_height="49dp"
+                android:background="@drawable/edit_text"
+                android:inputType="textEmailAddress"
+                android:padding="10dp"
+                app:layout_constraintTop_toBottomOf="@id/Correo"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="10dp" />
 
-    <Button
-        android:id="@+id/btnIniciarSesion"
-        android:layout_width="231dp"
-        android:layout_height="48dp"
-        android:layout_gravity="center"
-        android:background="@drawable/boton"
-        android:text="Iniciar Sesion"
-        android:textColor="#FFFFFF"
-        android:textSize="17sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.422"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.76" />
+            <TextView
+                android:id="@+id/Contraseña"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="INGRESA TU CONTRASEÑA"
+                android:textColor="#32644F"
+                android:textSize="15sp"
+                app:layout_constraintTop_toBottomOf="@id/txtCorreoOrNameLogin"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="10dp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="¿No tienes Cuenta?"
-        android:textColor="#32644F"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.831" />
+            <EditText
+                android:id="@+id/txtContrasenaLogin"
+                android:layout_width="290dp"
+                android:layout_height="49dp"
+                android:background="@drawable/edit_text"
+                android:inputType="textPassword"
+                android:padding="10dp"
+                app:layout_constraintTop_toBottomOf="@id/Contraseña"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="10dp" />
+>>>>>>> ccf6e455b6bacdb55cb81e24a14d0dcaf2651108
 
-    <Button
-        android:id="@+id/btnRegistrarseLogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/boton"
-        android:text="Registrarse"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.976" />
+            <Button
+                android:id="@+id/btnIniciarSesion"
+                android:layout_width="231dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:background="@drawable/boton"
+                android:backgroundTint="#752F2F"
+                android:text="Iniciar Sesion"
+                android:textColor="#FFFFFF"
+                android:textSize="17sp"
+                app:layout_constraintTop_toBottomOf="@id/txtContrasenaLogin"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="20dp" />
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="44dp"
+                android:text="¿No tienes Cuenta?"
+                android:textColor="#32644F"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btnIniciarSesion" />
 
+            <Button
+                android:id="@+id/btnRegistrarseLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="96dp"
+                android:background="@drawable/boton"
+                android:text="Registrarse"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btnIniciarSesion" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,4 +6,11 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_prueba">prueba</string>
+    <string-array name="opciones_trabajo">
+        <item>Desarrollador</item>
+        <item>Diseñador</item>
+        <item>Analista</item>
+        <item>Gerente</item>
+        <item>Otros</item>
+    </string-array>
 </resources>

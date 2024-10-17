@@ -7,101 +7,127 @@
     android:background="#D8D4F3"
     tools:context=".fragment_asistencia">
 
-
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="413dp"
-        android:layout_height="107dp"
-        android:background="@drawable/bordes"
-        android:orientation="horizontal"
-        android:padding="16dp"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/top_background"
+        app:layout_constraintBottom_toTopOf="@+id/button6"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
-
-        <TextView
-            android:id="@+id/textViewAsistencia"
-            android:layout_width="282dp"
-            android:layout_height="51dp"
-            android:text="Asistencia"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textSize="33sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.194" />
-
-        <ImageView
-            android:id="@+id/imageView1"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:src="@drawable/hats_logo" />
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/textView15"
-        android:layout_width="219dp"
-        android:layout_height="47dp"
-        android:text="Preguntas Frecuentes"
-        android:textSize="22sp"
-        android:textAlignment="center"
-        android:textColor="#4D6A5F"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.197"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.229" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
-        android:id="@+id/imageView16"
-        android:layout_width="124dp"
-        android:layout_height="117dp"
-        android:background="@drawable/boton"
-        android:src="@drawable/asistencia_icon"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/imageView11"
+        android:layout_width="321dp"
+        android:layout_height="89dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/infotxt"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.697" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView12"
+        android:layout_width="109dp"
+        android:layout_height="120dp"
+        android:src="@drawable/hats_logo"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView11"
+        app:layout_constraintEnd_toEndOf="@+id/imageView11"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/imageView11"
+        app:layout_constraintTop_toTopOf="@+id/imageView11"
+        app:layout_constraintVertical_bias="0.451" />
+
+    <TextView
+        android:id="@+id/textView34"
+        android:layout_width="194dp"
+        android:layout_height="64dp"
+        android:text="Asistencia Tecnica"
+        android:textColor="#7D3AB7"
+        android:textColorHighlight="#8C61D3"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView11"
+        app:layout_constraintEnd_toEndOf="@+id/imageView11"
+        app:layout_constraintHorizontal_bias="0.858"
+        app:layout_constraintStart_toStartOf="@+id/imageView11"
+        app:layout_constraintTop_toTopOf="@+id/imageView11"
+        app:layout_constraintVertical_bias="0.48" />
 
     <TextView
         android:id="@+id/textView19"
-        android:layout_width="205dp"
+        android:layout_width="330dp"
         android:layout_height="50dp"
+        android:background="@drawable/txtviws"
         android:text="Mas informacion..."
         android:textAlignment="center"
-        android:textColor="#4D6A5F"
-        android:textSize="22sp"
+        android:textColor="#5B4D6A"
+        android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.184"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.455" />
+        app:layout_constraintVertical_bias="0.718" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="330dp"
+        android:layout_height="47dp"
+        android:background="@drawable/txtviws"
+        android:text="Preguntas Frecuentes"
+        android:textAlignment="center"
+        android:textColor="#5B4D6A"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.491" />
 
     <TextView
         android:id="@+id/textView18"
-        android:layout_width="205dp"
+        android:layout_width="330dp"
         android:layout_height="50dp"
+        android:background="@drawable/txtviws"
         android:text="Metodos de pago"
         android:textAlignment="center"
-        android:textColor="#4D6A5F"
-        android:textSize="25sp"
+        android:textColor="#5B4D6A"
+        android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.184"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.343" />
+        app:layout_constraintVertical_bias="0.606" />
+
+    <ImageView
+        android:id="@+id/imageView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/bottom_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView18"
+        android:layout_width="177dp"
+        android:layout_height="146dp"
+        android:src="@drawable/baseline_headset_mic_24dd"
+        app:layout_constraintBottom_toTopOf="@+id/textView15"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView7"
+        app:layout_constraintVertical_bias="0.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,34 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".mas_informacion">
 
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/top_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="321dp"
+        android:layout_height="89dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/infotxt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView12"
+        android:layout_width="109dp"
+        android:layout_height="120dp"
+        android:src="@drawable/hats_logo"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView11"
+        app:layout_constraintEnd_toEndOf="@+id/imageView11"
+        app:layout_constraintHorizontal_bias="0.014"
+        app:layout_constraintStart_toStartOf="@+id/imageView11"
+        app:layout_constraintTop_toTopOf="@+id/imageView11"
+        app:layout_constraintVertical_bias="0.516" />
+
+    <TextView
+        android:id="@+id/textView34"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="28dp"
+        android:text="Pagos"
+        android:textColor="#7D3AB7"
+        android:textColorHighlight="#8C61D3"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView11"
+        app:layout_constraintEnd_toEndOf="@+id/imageView11"
+        app:layout_constraintHorizontal_bias="0.774"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView11"
+        app:layout_constraintVertical_bias="0.411" />
+
+
     <TextView
         android:id="@+id/textView17"
-        android:layout_width="345dp"
-        android:layout_height="152dp"
+        android:layout_width="342dp"
+        android:layout_height="151dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="132dp"
+        android:layout_marginEnd="33dp"
+        android:layout_marginBottom="38dp"
+        android:background="@drawable/txtviws"
         android:text="Misión
 Nuestra misión es empoderar a pequeños emprendedores y negocios locales, brindándoles una plataforma accesible y fácil de usar que les permita conectar con clientes, gestionar sus ventas, y expandir su alcance. Nos comprometemos a ofrecer herramientas innovadoras que faciliten la administración y crecimiento de sus negocios, contribuyendo así al desarrollo económico de sus comunidades."
-        tools:layout_editor_absoluteX="33dp"
-        tools:layout_editor_absoluteY="72dp" />
+        android:textColor="#432E68"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textView30"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView30"
-        android:layout_width="363dp"
-        android:layout_height="109dp"
+        android:layout_width="364dp"
+        android:layout_height="111dp"
+        android:layout_marginStart="23dp"
+        android:layout_marginEnd="23dp"
+        android:layout_marginBottom="19dp"
+        android:background="@drawable/txtviws"
         android:text="Visión
 Ser la plataforma líder para pequeños emprendedores, promoviendo una economía inclusiva y colaborativa. Aspiramos a que todos los emprendedores, sin importar su tamaño, puedan prosperar y competir en el mercado digital, obteniendo el apoyo y los recursos necesarios para llevar sus ideas al siguiente nivel."
-        tools:layout_editor_absoluteX="25dp"
-        tools:layout_editor_absoluteY="262dp" />
+        android:textColor="#432E68"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textView31"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView17" />
 
     <TextView
         android:id="@+id/textView31"
-        android:layout_width="356dp"
-        android:layout_height="99dp"
+        android:layout_width="369dp"
+        android:layout_height="96dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginEnd="22dp"
+        android:layout_marginBottom="212dp"
+        android:background="@drawable/txtviws"
         android:text="Para el lanzamiento de nuestra app, realizaremos una campaña de pre-lanzamiento que permitirá a un grupo selecto de emprendedores probar la plataforma y ofrecer sus opiniones. El lanzamiento oficial incluirá un webinar para presentar las funcionalidades claves."
-        tools:layout_editor_absoluteX="22dp"
-        tools:layout_editor_absoluteY="390dp" />
+        android:textColor="#432E68"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView30" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

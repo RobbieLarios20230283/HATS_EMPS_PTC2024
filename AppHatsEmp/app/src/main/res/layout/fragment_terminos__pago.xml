@@ -7,110 +7,159 @@
     android:background="#D8D4F3"
     tools:context=".ui.dashboard.DashboardFragment">
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="413dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="21dp"
-        android:background="@drawable/bordes"
-        android:orientation="horizontal"
-        android:padding="16dp"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/textView4"
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/top_background"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/textViewCondiciones"
-            android:layout_width="281dp"
-            android:layout_height="74dp"
-            android:text="Condiciones de Pago
-"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textSize="30sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.194" />
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="321dp"
+        android:layout_height="89dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/infotxt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/imageView1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/hats_logo" />
-    </LinearLayout>
+    <ImageView
+        android:id="@+id/imageView12"
+        android:layout_width="109dp"
+        android:layout_height="120dp"
+        android:src="@drawable/hats_logo"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView11"
+        app:layout_constraintEnd_toEndOf="@+id/imageView11"
+        app:layout_constraintHorizontal_bias="0.014"
+        app:layout_constraintStart_toStartOf="@+id/imageView11"
+        app:layout_constraintTop_toTopOf="@+id/imageView11"
+        app:layout_constraintVertical_bias="0.516" />
+
+    <TextView
+        android:id="@+id/textView34"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="28dp"
+        android:text="Pagos"
+        android:textColor="#7D3AB7"
+        android:textColorHighlight="#8C61D3"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView11"
+        app:layout_constraintEnd_toEndOf="@+id/imageView11"
+        app:layout_constraintHorizontal_bias="0.774"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView11"
+        app:layout_constraintVertical_bias="0.411" />
+
+    <ImageView
+        android:id="@+id/imageView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/bottom_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="47dp"
-        android:layout_marginEnd="47dp"
-        android:layout_marginBottom="19dp"
+        android:layout_width="338dp"
+        android:layout_height="109dp"
+        android:background="@drawable/txtviws"
+        android:padding="5dp"
+        android:paddingStart="5dp"
+        android:paddingLeft="5dp"
+        android:paddingTop="5dp"
+        android:paddingEnd="5dp"
+        android:paddingRight="5dp"
+        android:paddingBottom="5dp"
         android:text="1. Aceptación de los Términos de Pago
 Al utilizar los servicios de pago proporcionados por HATS, usted acepta cumplir con los presentes términos y condiciones. Si no está de acuerdo con estos términos, no debe utilizar los servicios de pago."
-        app:layout_constraintBottom_toTopOf="@+id/textView11"
+        android:textColor="#86648A"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.526"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView7" />
 
     <TextView
-        android:id="@+id/textView11"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginEnd="44dp"
-        android:layout_marginBottom="17dp"
-        android:text="2. Métodos de Pago: Los usuarios pueden realizar pagos a través de los siguientes métodos: [Tarjetas de crédito/débito, PayPal, transferencias bancarias, etc.].Todos los pagos serán procesados de manera segura mediante los proveedores de pago autorizados."
-        app:layout_constraintBottom_toTopOf="@+id/textView12"
+        android:id="@+id/textView20"
+        android:layout_width="335dp"
+        android:layout_height="88dp"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/txtviws"
+        android:padding="5dp"
+        android:paddingStart="5dp"
+        android:paddingLeft="5dp"
+        android:paddingTop="5dp"
+        android:paddingEnd="5dp"
+        android:paddingRight="5dp"
+        android:paddingBottom="5dp"
+        android:text="4. Seguridad de los Pagos: utiliza medidas de seguridad avanzadas para proteger la información de pago. Sin embargo, no podemos garantizar una seguridad absoluta contra accesos no autorizados. El usuario es responsable de mantener la confidencialidad de su información financiera."
+        android:textColor="#86648A"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.605"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
     <TextView
         android:id="@+id/textView12"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="45dp"
-        android:layout_marginEnd="45dp"
-        android:layout_marginBottom="30dp"
+        android:layout_width="322dp"
+        android:layout_height="88dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/txtviws"
+        android:padding="5dp"
+        android:paddingStart="5dp"
+        android:paddingLeft="5dp"
+        android:paddingTop="5dp"
+        android:paddingEnd="5dp"
+        android:paddingRight="5dp"
+        android:paddingBottom="5dp"
         android:text="3. Facturación: Después de cada transacción, se emitirá una factura digital que se enviará al correo electrónico registrado del usuario o estará disponible en la sección de Historial de Compras dentro de la aplicación."
-        app:layout_constraintBottom_toTopOf="@+id/textView20"
+        android:textColor="#86648A"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.528"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
     <TextView
-        android:id="@+id/textView20"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="38dp"
-        android:layout_marginEnd="38dp"
-        android:layout_marginBottom="146dp"
-        android:text="4. Seguridad de los Pagos: utiliza medidas de seguridad avanzadas para proteger la información de pago. Sin embargo, no podemos garantizar una seguridad absoluta contra accesos no autorizados. El usuario es responsable de mantener la confidencialidad de su información financiera."
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/textView11"
+        android:layout_width="323dp"
+        android:layout_height="88dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/txtviws"
+        android:padding="5dp"
+        android:paddingStart="5dp"
+        android:paddingLeft="5dp"
+        android:paddingTop="5dp"
+        android:paddingEnd="5dp"
+        android:paddingRight="5dp"
+        android:paddingBottom="5dp"
+        android:text="2. Métodos de Pago: Los usuarios pueden realizar pagos a través de los siguientes métodos: [Tarjetas de crédito/débito, PayPal, transferencias bancarias, etc.].Todos los pagos serán procesados de manera segura mediante los proveedores de pago autorizados."
+        android:textColor="#86648A"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.522"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <Button
         android:id="@+id/btnRegresar"
         android:layout_width="65dp"
         android:layout_height="49dp"
+        android:layout_marginBottom="48dp"
         android:background="@drawable/boton"
         android:textColor="#FFFFFF"
         android:textStyle="bold"
         app:icon="@drawable/retroceso"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.046"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.92" />
+        app:layout_constraintHorizontal_bias="0.135"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

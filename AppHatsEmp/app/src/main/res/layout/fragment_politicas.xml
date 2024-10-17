@@ -7,67 +7,85 @@
     android:background="#D8D4F3"
     tools:context=".ui.dashboard.DashboardFragment">
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="413dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="21dp"
-        android:background="@drawable/bordes"
-        android:orientation="horizontal"
-        android:padding="16dp"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/textView4"
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/top_background"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/textViewCondiciones"
-            android:layout_width="281dp"
-            android:layout_height="74dp"
-            android:text="Politicas de privacidad
-"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textSize="30sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.194" />
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="321dp"
+        android:layout_height="89dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/infotxt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/imageView1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/hats_logo" />
-    </LinearLayout>
+    <ImageView
+        android:id="@+id/imageView12"
+        android:layout_width="109dp"
+        android:layout_height="120dp"
+        android:src="@drawable/hats_logo"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView11"
+        app:layout_constraintEnd_toEndOf="@+id/imageView11"
+        app:layout_constraintHorizontal_bias="0.014"
+        app:layout_constraintStart_toStartOf="@+id/imageView11"
+        app:layout_constraintTop_toTopOf="@+id/imageView11"
+        app:layout_constraintVertical_bias="0.516" />
+
+    <TextView
+        android:id="@+id/textView34"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="28dp"
+        android:text="Politicas"
+        android:textColor="#7D3AB7"
+        android:textColorHighlight="#8C61D3"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView11"
+        app:layout_constraintEnd_toEndOf="@+id/imageView11"
+        app:layout_constraintHorizontal_bias="0.774"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView11"
+        app:layout_constraintVertical_bias="0.411" />
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="322dp"
+        android:layout_height="94dp"
         android:layout_marginStart="47dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="47dp"
         android:layout_marginBottom="32dp"
+        android:background="@drawable/txtviws"
         android:text="1. En Hats, respetamos y protegemos la privacidad de nuestros usuarios. Esta Política de Privacidad explica cómo recopilamos, utilizamos, compartimos y protegemos la información personal cuando usas nuestra aplicación."
+        android:textColor="#673AB7"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/textView11"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView11" />
 
     <TextView
         android:id="@+id/textView11"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="322dp"
+        android:layout_height="138dp"
         android:layout_marginStart="45dp"
         android:layout_marginEnd="45dp"
         android:layout_marginBottom="9dp"
+        android:background="@drawable/txtviws"
         android:text="2.Recopilamos diferentes tipos de información para proporcionarte un mejor servicio y mejorar tu experiencia en la aplicación. Los tipos de información que podemos recopilar incluyen:
 Información Personal: como nombre, dirección de correo electrónico, número de teléfono, datos de facturación y de cuenta."
+        android:textColor="#673AB7"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/textView12"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -75,25 +93,34 @@ Información Personal: como nombre, dirección de correo electrónico, número d
 
     <TextView
         android:id="@+id/textView12"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="330dp"
+        android:layout_height="118dp"
         android:layout_marginStart="45dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="45dp"
         android:layout_marginBottom="17dp"
+        android:background="@drawable/txtviws"
         android:text="3.Nos comprometemos a proteger tu información personal. Utilizamos medidas técnicas y organizativas adecuadas para garantizar que tu información esté segura y protegida contra accesos no autorizados, uso indebido o divulgación."
+        android:textColor="#673AB7"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/textView20"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
     <TextView
         android:id="@+id/textView20"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="322dp"
+        android:layout_height="73dp"
         android:layout_marginStart="44dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="44dp"
         android:layout_marginBottom="114dp"
+        android:background="@drawable/txtviws"
         android:text="4.Nuestra aplicación no está dirigida a menores de 18 años, y no recopilamos conscientemente información personal de menores. Si eres padre o tutor y crees que hemos recopilado información de tu hijo, contáctanos para que podamos eliminar los datos."
+        android:textColor="#673AB7"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -110,7 +137,5 @@ Información Personal: como nombre, dirección de correo electrónico, número d
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.046"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.935" />
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

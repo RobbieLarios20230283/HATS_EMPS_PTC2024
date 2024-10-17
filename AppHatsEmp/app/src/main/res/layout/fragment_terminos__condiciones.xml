@@ -7,94 +7,109 @@
     android:background="#D8D4F3"
     tools:context=".ui.dashboard.DashboardFragment">
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="413dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="21dp"
-        android:background="@drawable/bordes"
-        android:orientation="horizontal"
-        android:padding="16dp"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/textView4"
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/top_background"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/textViewCondiciones"
-            android:layout_width="281dp"
-            android:layout_height="74dp"
-            android:text="Terminos y Condiciones
-"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textSize="30sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.194" />
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="321dp"
+        android:layout_height="89dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/infotxt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/imageView1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/hats_logo" />
-    </LinearLayout>
+    <ImageView
+        android:id="@+id/imageView12"
+        android:layout_width="109dp"
+        android:layout_height="120dp"
+        android:src="@drawable/hats_logo"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView11"
+        app:layout_constraintEnd_toEndOf="@+id/imageView11"
+        app:layout_constraintHorizontal_bias="0.014"
+        app:layout_constraintStart_toStartOf="@+id/imageView11"
+        app:layout_constraintTop_toTopOf="@+id/imageView11"
+        app:layout_constraintVertical_bias="0.516" />
+
+    <TextView
+        android:id="@+id/textView34"
+        android:layout_width="185dp"
+        android:layout_height="79dp"
+        android:layout_marginEnd="28dp"
+        android:text="Terminos Generales"
+        android:textColor="#7D3AB7"
+        android:textColorHighlight="#8C61D3"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView11"
+        app:layout_constraintEnd_toEndOf="@+id/imageView11"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView11"
+        app:layout_constraintVertical_bias="0.0" />
+
+
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="47dp"
-        android:layout_marginEnd="47dp"
-        android:layout_marginBottom="19dp"
+        android:layout_width="318dp"
+        android:layout_height="98dp"
+        android:layout_marginTop="164dp"
+        android:background="@drawable/txtviws"
         android:text="1. Aceptación de los Términos: Al descargar, instalar y utilizar la aplicación, el usuario acepta los siguientes términos y condiciones. Si no está de acuerdo con estos términos, el usuario no debe usar la aplicación."
-        app:layout_constraintBottom_toTopOf="@+id/textView11"
+        android:textColor="#61517C"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.526"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView11"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginEnd="44dp"
-        android:layout_marginBottom="23dp"
+        android:layout_width="323dp"
+        android:layout_height="99dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/txtviws"
         android:text="2. Registro y Cuenta de Usuario: El usuario debe registrarse en la aplicación proporcionando información veraz y actualizada. El usuario es responsable de mantener la confidencialidad de su cuenta y contraseña, así como de todas las actividades que se realicen bajo su cuenta."
-        app:layout_constraintBottom_toTopOf="@+id/textView12"
+        android:textColor="#61517C"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <TextView
         android:id="@+id/textView12"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="45dp"
-        android:layout_marginEnd="45dp"
-        android:layout_marginBottom="30dp"
+        android:layout_width="322dp"
+        android:layout_height="98dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/txtviws"
         android:text="3. Uso Permitido: La aplicación solo debe ser utilizada para los fines que permite, relacionados con la gestión de pequeños negocios. Está prohibido el uso de la aplicación para cualquier actividad ilegal, inmoral o no autorizada."
-        app:layout_constraintBottom_toTopOf="@+id/textView20"
+        android:textColor="#61517C"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
     <TextView
         android:id="@+id/textView20"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="38dp"
-        android:layout_marginEnd="38dp"
-        android:layout_marginBottom="146dp"
+        android:layout_width="335dp"
+        android:layout_height="99dp"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/txtviws"
         android:text="4. Privacidad y Protección de Datos: La aplicación recopila ciertos datos personales del usuario, tales como nombre, correo electrónico y detalles del negocio. Estos datos serán utilizados únicamente para los fines descritos en la política de privacidad."
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textColor="#61517C"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.644"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
@@ -102,14 +117,13 @@
         android:id="@+id/btnRegresar"
         android:layout_width="65dp"
         android:layout_height="49dp"
-        android:background="@drawable/boton"
-        android:textColor="#FFFFFF"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/txtviws"
+        android:textColor="#61517C"
         android:textStyle="bold"
         app:icon="@drawable/retroceso"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.046"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.92" />
+        app:layout_constraintHorizontal_bias="0.083"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

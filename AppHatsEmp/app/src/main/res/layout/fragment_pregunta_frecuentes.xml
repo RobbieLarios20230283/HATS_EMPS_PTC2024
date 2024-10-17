@@ -6,60 +6,122 @@
     android:layout_height="match_parent"
     tools:context=".pregunta_frecuentes">
 
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/top_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="321dp"
+        android:layout_height="89dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/infotxt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView12"
+        android:layout_width="109dp"
+        android:layout_height="120dp"
+        android:src="@drawable/hats_logo"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView11"
+        app:layout_constraintEnd_toEndOf="@+id/imageView11"
+        app:layout_constraintHorizontal_bias="0.014"
+        app:layout_constraintStart_toStartOf="@+id/imageView11"
+        app:layout_constraintTop_toTopOf="@+id/imageView11"
+        app:layout_constraintVertical_bias="0.516" />
+
+    <TextView
+        android:id="@+id/textView34"
+        android:layout_width="147dp"
+        android:layout_height="76dp"
+        android:layout_marginEnd="28dp"
+        android:text="Preguntas Frecuentes"
+        android:textColor="#7D3AB7"
+        android:textColorHighlight="#8C61D3"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView11"
+        app:layout_constraintEnd_toEndOf="@+id/imageView11"
+        app:layout_constraintHorizontal_bias="0.904"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView11"
+        app:layout_constraintVertical_bias="1.0" />
+
     <TextView
         android:id="@+id/textView26"
         android:layout_width="352dp"
         android:layout_height="73dp"
+        android:background="@drawable/txtviws"
         android:text="¿Cómo puedo registrar mi negocio en la app?
 
 Explica el proceso paso a paso para que los usuarios puedan crear un perfil para su negocio, desde el registro hasta completar la información."
+        android:textColor="#D0463659"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.167" />
+        app:layout_constraintVertical_bias="0.296" />
 
     <TextView
         android:id="@+id/textView27"
         android:layout_width="363dp"
         android:layout_height="86dp"
+        android:background="@drawable/txtviws"
         android:text="¿Qué métodos de pago puedo aceptar a través de la app?
 
 Describe las opciones de pago disponibles, como tarjetas de crédito, transferencias bancarias, o plataformas de pago integradas (como PayPal o Stripe), y cómo configurarlas en su perfil."
+        android:textColor="#D0463659"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.625"
+        app:layout_constraintHorizontal_bias="0.666"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.302" />
+        app:layout_constraintVertical_bias="0.443" />
 
     <TextView
         android:id="@+id/textView28"
         android:layout_width="369dp"
         android:layout_height="106dp"
+        android:background="@drawable/txtviws"
         android:text="¿Cómo puedo promocionar mis productos/servicios en la app?
 
 Ofrece una guía sobre cómo los emprendedores pueden utilizar las herramientas de marketing de la app, como descuentos, promociones, anuncios, o publicaciones destacadas."
+        android:textColor="#D0463659"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.619"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.48" />
+        app:layout_constraintVertical_bias="0.825" />
 
     <TextView
         android:id="@+id/textView29"
         android:layout_width="344dp"
         android:layout_height="105dp"
+        android:background="@drawable/txtviws"
         android:text="¿Cómo puedo contactar con el soporte si tengo problemas con mi cuenta?
 
 Proporciona instrucciones claras sobre cómo los usuarios pueden acceder al soporte técnico, ya sea por correo electrónico, chat en la app, o una línea telefónica, y los tiempos de respuesta aproximados."
+        android:textColor="#D0463659"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.388"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.674" />
+        app:layout_constraintVertical_bias="0.632" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

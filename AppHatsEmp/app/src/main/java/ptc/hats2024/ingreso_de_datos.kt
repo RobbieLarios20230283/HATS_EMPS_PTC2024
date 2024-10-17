@@ -46,6 +46,7 @@ class ingreso_de_datos : AppCompatActivity() {
     private lateinit var ImgDui: ImageView
     private lateinit var txtNombrePerfil: EditText
     private lateinit var txtAreaTrabajo: AutoCompleteTextView
+    private lateinit var txtServicio: EditText
     private lateinit var txtFechaNacimiento: EditText
     private lateinit var txtNumeroTelefono: EditText
 
@@ -59,23 +60,48 @@ class ingreso_de_datos : AppCompatActivity() {
     private var duiUrl: String = ""
 
 
+
+
+
     private lateinit var pdfUrl: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ingreso_de_datos)
 
+        txtAreaTrabajo = findViewById(R.id.txtAreaTrabajo)
+
+        // Lista del catálogo
+        val catalogoItems = listOf(
+            Pair("1", "Carpintería"),
+            Pair("2", "Pintura"),
+            Pair("3", "Electricidad"),
+            Pair("4", "Mecánica"),
+            Pair("5", "Fontanería"),
+            Pair("6", "Limpieza"),
+            Pair("7", "Cerrajería"),
+            Pair("8", "Planchado")
+        )
+
+
+        val adapter = ArrayAdapter(this, android.R.layout.simple_dropdown_item_1line, catalogoItems)
+        txtAreaTrabajo.setAdapter(adapter)
+
+
+
         // Configuración de UI
         ImgPerfil = findViewById(R.id.imgPerfil)
         ImgDui = findViewById(R.id.imgDui)
-        txtNombrePerfil = findViewById(R.id.txtNombrePerfil)
 
+
+
+        txtNombrePerfil = findViewById(R.id.txtNombrePerfil)
+        txtServicio = findViewById(R.id.txtServicio)
         txtFechaNacimiento = findViewById(R.id.txtFechaNacimiento)
         txtNumeroTelefono = findViewById(R.id.txtNumeroTelefono)
 
         val btnTomarFoto: Button = findViewById(R.id.btnTomarFoto)
         val btnRegistrarse: Button = findViewById(R.id.btnRegistrarse)
-        val btnPdf: Button = findViewById(R.id.btnPDF)
         val btnTomarFotoDui: Button = findViewById(R.id.btnTomarFotoDui)
 
         uuidTrabajador = intent.getStringExtra("uuidTrabajador") ?: ""
@@ -97,19 +123,17 @@ class ingreso_de_datos : AppCompatActivity() {
             checkCameraPermission(true)
         }
 
-        btnPdf.setOnClickListener {
-            SeleccionarPDF()
-        }
 
         btnRegistrarse.setOnClickListener {
             val areaTrabajo = txtAreaTrabajo.text.toString().trim()
             val FechaNacimiento = txtFechaNacimiento.text.toString().trim()
             val numeroTelefono = txtNumeroTelefono.text.toString().trim()
             val nombrePerfil = txtNombrePerfil.text.toString().trim()
+            val servicios = txtServicio.text.toString().trim()
 
             try {
 
-                if (areaTrabajo.isEmpty() || areaTrabajo == "Selecciona un servicio") {
+                if (areaTrabajo == "Selecciona un servicio") {
                     Toast.makeText(this, "Por favor, selecciona un servicio", Toast.LENGTH_SHORT).show()
                     return@setOnClickListener
                 }
@@ -124,17 +148,21 @@ class ingreso_de_datos : AppCompatActivity() {
                 }
 
                 // Verificar que todos los campos estén llenos
-                if (FechaNacimiento.isNotEmpty() && numeroTelefono.isNotEmpty() && nombrePerfil.isNotEmpty()) {
+                if (FechaNacimiento.isNotEmpty() && numeroTelefono.isNotEmpty() && nombrePerfil.isNotEmpty() && servicios.isNotEmpty()) {
                     // Verificar si la fecha de nacimiento es válida antes de guardar
                     if (isValidDate(FechaNacimiento)) {
                         GuardarInformacion(
                             numeroTelefono,
-                            areaTrabajo,
+                            servicios,
                             nombrePerfil,
                             FechaNacimiento,
                             duiUrl,
                             perfilUrl
                         )
+                       catalogoItems.forEach{ catalogo ->
+                           val (uuid, _) = catalogo
+                           GuardarCatalogo(uuid)
+                       }
                     } else {
                         Toast.makeText(
                             this,
@@ -244,51 +272,7 @@ class ingreso_de_datos : AppCompatActivity() {
         })
     }
 
-    private fun SetupAutoCompleteTextView(items: List<DataListServicio>) {
-        txtAreaTrabajo = findViewById(R.id.txtAreaTrabajo)
 
-        // Verifica que la lista no esté vacía
-        if (items.isNotEmpty()) {
-            val adaptador = ArrayAdapter(this, R.layout.list_items, items.map { it.nombreServicio })
-            txtAreaTrabajo.setAdapter(adaptador)
-
-            txtAreaTrabajo.onItemClickListener = AdapterView.OnItemClickListener { adapterView, _, position, _ ->
-                selectedService = items[position]
-                Toast.makeText(this, "Servicio seleccionado: ${selectedService?.nombreServicio}", Toast.LENGTH_SHORT).show()
-            }
-        } else {
-            Toast.makeText(this, "No hay servicios disponibles", Toast.LENGTH_SHORT).show()
-        }
-    }
-
-
-    suspend fun NombreServicio(): List<DataListServicio>{
-        return withContext(Dispatchers.IO){
-            val nombreServicios = mutableListOf<DataListServicio>()
-
-            val objConnection = ClaseConexion().cadenaConexion()
-            objConnection?.let {
-                try {
-                    val query = "SELECT uuidServicios, NombreServicios FROM tbservicios"
-                    val statement = it.createStatement()
-                    val resultSet = statement.executeQuery(query)
-
-                    while (resultSet.next()) {
-                        val uuidServicio = resultSet.getString("uuidServicios")
-                        val nombreServicio = resultSet.getString("NombreServicios")
-                        nombreServicios.add(DataListServicio(uuidServicio, nombreServicio))
-                    }
-                }
-                catch (e: SQLException) {
-                    e.printStackTrace()
-                }
-                finally {
-                    it.close()
-                }
-            }
-            nombreServicios
-        }
-    }
 
         // Verificación de la fecha válida
         private fun isValidDate(date: String): Boolean {
@@ -337,8 +321,28 @@ class ingreso_de_datos : AppCompatActivity() {
         return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)
     }
 
-
-        private fun GuardarInformacion(numeroTelefono: String, areaTrabajo: String, nombrePerfil: String, FechaNacimiento: String,  imgDuiUri: String, imgPerfilUri: String) {
+    private fun GuardarCatalogo(catalogo: String) {
+        val objConnection = ClaseConexion().cadenaConexion()
+        if (objConnection != null) {
+            val statement = objConnection.prepareStatement(
+                "Insert into tbservicios (uuidCatalogo) Values(?)"
+            )
+            statement.setString(1, catalogo)
+            try {
+                statement.executeUpdate()
+                println("Catalogo $catalogo insertado con éxito.")
+            } catch (e: SQLException) {
+                e.printStackTrace()  //
+            } finally {
+                statement.close()
+                objConnection.close()
+            }
+        }
+        else {
+            println("Error: No se pudo establecer la conexión a la base de datos.")
+        }
+    }
+        private fun GuardarInformacion(numeroTelefono: String, servicios: String, nombrePerfil: String, FechaNacimiento: String,  imgDuiUri: String, imgPerfilUri: String) {
 
         GlobalScope.launch(Dispatchers.IO) {
             try {
@@ -358,7 +362,7 @@ class ingreso_de_datos : AppCompatActivity() {
                        """)!!
 
                     statement.setString(1, numeroTelefono)
-                    statement.setString(2, areaTrabajo)
+                    statement.setString(2, servicios)
                     statement.setString(3, nombrePerfil)
                     statement.setString(4, FechaNacimiento)
                     statement.setString(5, imgDuiUri)
@@ -395,7 +399,7 @@ class ingreso_de_datos : AppCompatActivity() {
 
     private fun limpiarCampos() {
         txtNombrePerfil.text.clear()
-
+        txtServicio.text.clear()
         txtNumeroTelefono.text.clear()
         txtFechaNacimiento.text.clear()
     }

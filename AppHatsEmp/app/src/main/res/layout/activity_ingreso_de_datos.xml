@@ -8,9 +8,14 @@
     tools:context=".ingreso_de_datos">
 
     <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fillViewport="true">
+        android:id="@+id/scrollView2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -85,18 +90,50 @@
 
             <!-- Fecha de nacimiento -->
 
+
+            <!-- Nombre de Perfil -->
+
+            <TextView
+                android:id="@+id/textViewService"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ingresa el servicio que quieres ofrecer"
+                android:textColor="#6E5789"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.266" />
+
+
+            <EditText
+                android:id="@+id/txtServicio"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/txtviws"
+                android:hint="..."
+                android:inputType="text"
+                android:padding="10dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewService" />
+
             <TextView
                 android:id="@+id/textViewEdad"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="104dp"
                 android:text="Ingresa tu fecha de nacimiento"
                 android:textColor="#6E5789"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/txtAreaTrabajoLayout" />
 
-            <!-- Nombre de Perfil -->
             <EditText
                 android:id="@+id/txtFechaNacimiento"
                 android:layout_width="0dp"
@@ -127,21 +164,6 @@
                 app:layout_constraintTop_toBottomOf="@id/txtFechaNacimiento" />
 
             <TextView
-                android:id="@+id/textView9"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:text="Ingresa tus antecedentes"
-                android:textAlignment="center"
-                android:textColor="#6E5789"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.497"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/btnTomarFoto" />
-
-            <TextView
                 android:id="@+id/textViewNum"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -152,20 +174,6 @@
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/txtNombrePerfil" />
-
-            <TextView
-                android:id="@+id/txtUrlPdf"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:text="Documento PDF"
-                android:textColor="#6E5789"
-                android:textSize="19sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.497"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/btnPDF" />
 
             <EditText
                 android:id="@+id/txtNombrePerfil"
@@ -245,42 +253,18 @@
                 app:layout_constraintStart_toStartOf="@id/imgDui"
                 app:layout_constraintTop_toBottomOf="@id/imgDui" />
 
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="59dp"
-                android:layout_height="66dp"
-                android:layout_marginTop="20dp"
-                android:src="@drawable/baseline_picture_as_pdf_24"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textView9" />
-
-            <Button
-                android:id="@+id/btnPDF"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@drawable/boton"
-                android:backgroundTint="#400707"
-                android:text="Seleccionar PDF"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.497"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/imageView" />
-
             <Button
                 android:id="@+id/btnRegistrarse"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
+                android:layout_marginTop="28dp"
                 android:background="@drawable/boton"
                 android:backgroundTint="#400707"
                 android:text="Registrarse"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/txtUrlPdf" />
+                app:layout_constraintTop_toBottomOf="@+id/btnTomarFoto" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

@@ -24,14 +24,13 @@ class Perfil : Fragment() {
             val objConexion = ClaseConexion().cadenaConexion()
             val statement = objConexion?.createStatement()
 
-            val resultSet = statement?.executeQuery("SELECT * FROM Trabajador WHERE CorreoUS = '$Correo'")
+            val resultSet = statement?.executeQuery("SELECT * FROM Trabajador WHERE correo = '$Correo'")
             val listaTrabajador = mutableListOf<PerfilTrabajador>()
 
             if (resultSet != null) {
                 while (resultSet.next()) {
                     val nombre = resultSet.getString("nombre")
                     val correo = resultSet.getString("correo")
-                    val contrasena = resultSet.getString("contrasena")
                     val direccion = resultSet.getString("direccion")
                     val telefono = resultSet.getString("telefono")
                     val servicio = resultSet.getString("servicio")
@@ -67,7 +66,7 @@ class Perfil : Fragment() {
             val nombrePerfil = root.findViewById<EditText>(R.id.editTextPerfil)
             nombrePerfil.setText(perfilTrabajador.nombrePerfil)
 
-            val imagenPerfil = root.findViewById<TextView>(R.id.imgPerfilUser)
+            val imagenPerfil = root.findViewById<TextView>(R.id.imageView17)
             imagenPerfil.text = perfilTrabajador.imagenPerfil
 
         }

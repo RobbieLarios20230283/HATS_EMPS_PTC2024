@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".pregunta_frecuentes">
+
+    <TextView
+        android:id="@+id/textView26"
+        android:layout_width="352dp"
+        android:layout_height="73dp"
+        android:text="¿Cómo puedo registrar mi negocio en la app?
+
+Explica el proceso paso a paso para que los usuarios puedan crear un perfil para su negocio, desde el registro hasta completar la información."
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.167" />
+
+    <TextView
+        android:id="@+id/textView27"
+        android:layout_width="363dp"
+        android:layout_height="86dp"
+        android:text="¿Qué métodos de pago puedo aceptar a través de la app?
+
+Describe las opciones de pago disponibles, como tarjetas de crédito, transferencias bancarias, o plataformas de pago integradas (como PayPal o Stripe), y cómo configurarlas en su perfil."
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.625"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.302" />
+
+    <TextView
+        android:id="@+id/textView28"
+        android:layout_width="369dp"
+        android:layout_height="106dp"
+        android:text="¿Cómo puedo promocionar mis productos/servicios en la app?
+
+Ofrece una guía sobre cómo los emprendedores pueden utilizar las herramientas de marketing de la app, como descuentos, promociones, anuncios, o publicaciones destacadas."
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.619"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.48" />
+
+    <TextView
+        android:id="@+id/textView29"
+        android:layout_width="344dp"
+        android:layout_height="105dp"
+        android:text="¿Cómo puedo contactar con el soporte si tengo problemas con mi cuenta?
+
+Proporciona instrucciones claras sobre cómo los usuarios pueden acceder al soporte técnico, ya sea por correo electrónico, chat en la app, o una línea telefónica, y los tiempos de respuesta aproximados."
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.388"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.674" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -82,5 +82,15 @@
         android:name="ptc.hats2024.Politicas"
         android:label="fragment_politicas"
         tools:layout="@layout/fragment_politicas" />
+    <fragment
+        android:id="@+id/pregunta_frecuentes"
+        android:name="ptc.hats2024.pregunta_frecuentes"
+        android:label="fragment_pregunta_frecuentes"
+        tools:layout="@layout/fragment_pregunta_frecuentes" />
+    <fragment
+        android:id="@+id/mas_informacion"
+        android:name="ptc.hats2024.mas_informacion"
+        android:label="fragment_mas_informacion"
+        tools:layout="@layout/fragment_mas_informacion" />
 
 </navigation>

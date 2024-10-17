@@ -60,21 +60,6 @@
         app:layout_constraintTop_toTopOf="@+id/linearLayout"
         app:layout_constraintVertical_bias="0.229" />
 
-    <TextView
-        android:id="@+id/textView17"
-        android:layout_width="242dp"
-        android:layout_height="47dp"
-        android:text="Contactar con un asesor"
-        android:textAlignment="center"
-        android:textColor="#4D6A5F"
-        android:textSize="22sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.224"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.316" />
-
     <ImageView
         android:id="@+id/imageView16"
         android:layout_width="124dp"
@@ -86,8 +71,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.737"
-         />
+        app:layout_constraintVertical_bias="0.697" />
 
     <TextView
         android:id="@+id/textView19"
@@ -102,7 +86,7 @@
         app:layout_constraintHorizontal_bias="0.184"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499" />
+        app:layout_constraintVertical_bias="0.455" />
 
     <TextView
         android:id="@+id/textView18"
@@ -117,7 +101,7 @@
         app:layout_constraintHorizontal_bias="0.184"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.405" />
+        app:layout_constraintVertical_bias="0.343" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

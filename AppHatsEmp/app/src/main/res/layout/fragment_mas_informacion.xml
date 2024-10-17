@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".mas_informacion">
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="345dp"
+        android:layout_height="152dp"
+        android:text="Misión
+Nuestra misión es empoderar a pequeños emprendedores y negocios locales, brindándoles una plataforma accesible y fácil de usar que les permita conectar con clientes, gestionar sus ventas, y expandir su alcance. Nos comprometemos a ofrecer herramientas innovadoras que faciliten la administración y crecimiento de sus negocios, contribuyendo así al desarrollo económico de sus comunidades."
+        tools:layout_editor_absoluteX="33dp"
+        tools:layout_editor_absoluteY="72dp" />
+
+    <TextView
+        android:id="@+id/textView30"
+        android:layout_width="363dp"
+        android:layout_height="109dp"
+        android:text="Visión
+Ser la plataforma líder para pequeños emprendedores, promoviendo una economía inclusiva y colaborativa. Aspiramos a que todos los emprendedores, sin importar su tamaño, puedan prosperar y competir en el mercado digital, obteniendo el apoyo y los recursos necesarios para llevar sus ideas al siguiente nivel."
+        tools:layout_editor_absoluteX="25dp"
+        tools:layout_editor_absoluteY="262dp" />
+
+    <TextView
+        android:id="@+id/textView31"
+        android:layout_width="356dp"
+        android:layout_height="99dp"
+        android:text="Para el lanzamiento de nuestra app, realizaremos una campaña de pre-lanzamiento que permitirá a un grupo selecto de emprendedores probar la plataforma y ofrecer sus opiniones. El lanzamiento oficial incluirá un webinar para presentar las funcionalidades claves."
+        tools:layout_editor_absoluteX="22dp"
+        tools:layout_editor_absoluteY="390dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

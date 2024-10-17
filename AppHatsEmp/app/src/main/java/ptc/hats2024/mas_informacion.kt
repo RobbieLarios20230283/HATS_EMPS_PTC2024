@@ -5,8 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
-import androidx.navigation.fragment.findNavController
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -15,10 +13,10 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [fragment_asistencia.newInstance] factory method to
+ * Use the [mas_informacion.newInstance] factory method to
  * create an instance of this fragment.
  */
-class fragment_asistencia : Fragment() {
+class mas_informacion : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -35,26 +33,27 @@ class fragment_asistencia : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val root = inflater.inflate(R.layout.fragment_asistencia, container, false)
-
-        val preguntas: EditText = root.findViewById(R.id.textView26)
-        val metodoPago: EditText = root.findViewById(R.id.textView18)
-        val masInfo: EditText = root.findViewById(R.id.textView19)
-
-        preguntas.setOnClickListener {
-            // Navega al fragmento de destino
-            findNavController().navigate(R.id.pregunta_frecuentes)
-        }
-
-        metodoPago.setOnClickListener{
-            findNavController().navigate(R.id.terminos_Pago)
-        }
-
-        masInfo.setOnClickListener{
-            findNavController().navigate(R.id.mas_informacion)
-        }
-
-        return root
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_mas_informacion, container, false)
     }
 
+    companion object {
+        /**
+         * Use this factory method to create a new instance of
+         * this fragment using the provided parameters.
+         *
+         * @param param1 Parameter 1.
+         * @param param2 Parameter 2.
+         * @return A new instance of fragment mas_informacion.
+         */
+        // TODO: Rename and change types and number of parameters
+        @JvmStatic
+        fun newInstance(param1: String, param2: String) =
+            mas_informacion().apply {
+                arguments = Bundle().apply {
+                    putString(ARG_PARAM1, param1)
+                    putString(ARG_PARAM2, param2)
+                }
+            }
+    }
 }

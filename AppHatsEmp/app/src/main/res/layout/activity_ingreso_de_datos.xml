@@ -15,6 +15,8 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#613030"
+            android:backgroundTint="#DFD7EB"
             android:padding="16dp">
 
             <!-- Contenedor superior -->
@@ -26,9 +28,9 @@
                 android:orientation="vertical"
                 android:padding="15dp"
                 android:textAlignment="center"
-                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent">
+                app:layout_constraintTop_toTopOf="parent">
 
                 <TextView
                     android:id="@+id/textViewIngreso"
@@ -37,114 +39,173 @@
                     android:text="Ingresa los siguientes datos para poder continuar"
                     android:textAlignment="center"
                     android:textColor="@color/white"
-                    android:textSize="20sp" />
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
             </LinearLayout>
 
             <!-- Trabajo -->
+
             <TextView
                 android:id="@+id/textView5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
                 android:text="Elige un Servicio"
-                android:textColor="@color/black"
-                app:layout_constraintTop_toBottomOf="@id/linearLayout"
-                app:layout_constraintStart_toStartOf="parent" />
+                android:textColor="#6E5789"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/linearLayout" />
 
             <com.google.android.material.textfield.TextInputLayout
 
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                 android:id="@+id/txtAreaTrabajoLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:hint="Seleccione una opción"
-                app:layout_constraintTop_toBottomOf="@id/textView5"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textView5"
                 tools:ignore="MissingConstraints">
 
                 <AutoCompleteTextView
                     android:id="@+id/txtAreaTrabajo"
                     android:layout_width="match_parent"
                     android:layout_height="94dp"
+                    android:background="@drawable/txtviws"
                     android:inputType="none"
                     android:padding="10dp"
                     android:textColor="@color/black"
                     android:textSize="18sp"
-                    tools:ignore="SpeakableTextPresentCheck, TouchTargetSizeCheck"/>
+                    android:textStyle="bold"
+                    tools:ignore="SpeakableTextPresentCheck, TouchTargetSizeCheck" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
             <!-- Fecha de nacimiento -->
+
             <TextView
                 android:id="@+id/textViewEdad"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
                 android:text="Ingresa tu fecha de nacimiento"
-                android:textColor="@color/black"
-                app:layout_constraintTop_toBottomOf="@id/txtAreaTrabajoLayout"
-                app:layout_constraintStart_toStartOf="parent" />
+                android:textColor="#6E5789"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtAreaTrabajoLayout" />
 
+            <!-- Nombre de Perfil -->
             <EditText
                 android:id="@+id/txtFechaNacimiento"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:background="@drawable/edit_text"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/txtviws"
+                android:hint="..."
                 android:inputType="number"
                 android:padding="10dp"
-                app:layout_constraintTop_toBottomOf="@id/textViewEdad"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintTop_toBottomOf="@id/textViewEdad" />
 
-            <!-- Nombre de Perfil -->
+            <!-- Número de teléfono -->
+
             <TextView
                 android:id="@+id/textViewEmail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="20dp"
                 android:text="Ingrese un nombre de Perfil"
-                android:textColor="@color/black"
-                app:layout_constraintTop_toBottomOf="@id/txtFechaNacimiento"
-                app:layout_constraintStart_toStartOf="parent" />
+                android:textColor="#6E5789"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtFechaNacimiento" />
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Ingresa tus antecedentes"
+                android:textAlignment="center"
+                android:textColor="#6E5789"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btnTomarFoto" />
+
+            <TextView
+                android:id="@+id/textViewNum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="16dp"
+                android:text="Ingresa tu número de telefono"
+                android:textColor="#6E5789"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtNombrePerfil" />
+
+            <TextView
+                android:id="@+id/txtUrlPdf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Documento PDF"
+                android:textColor="#6E5789"
+                android:textSize="19sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btnPDF" />
 
             <EditText
                 android:id="@+id/txtNombrePerfil"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:background="@drawable/edit_text"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/txtviws"
+                android:hint="..."
                 android:inputType="text"
                 android:padding="10dp"
-                app:layout_constraintTop_toBottomOf="@id/textViewEmail"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintTop_toBottomOf="@id/textViewEmail" />
 
-            <!-- Número de teléfono -->
-            <TextView
-                android:id="@+id/textViewNum"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Ingresa tu número de telefono"
-                android:textColor="@color/black"
-                app:layout_constraintTop_toBottomOf="@id/txtNombrePerfil"
-                app:layout_constraintStart_toStartOf="parent" />
+            <!-- Imágenes -->
 
             <EditText
                 android:id="@+id/txtNumeroTelefono"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:background="@drawable/edit_text"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/txtviws"
+                android:hint="..."
                 android:inputType="number"
                 android:padding="10dp"
-                app:layout_constraintTop_toBottomOf="@id/textViewNum"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintTop_toBottomOf="@id/textViewNum" />
 
-            <!-- Imágenes -->
             <ImageView
                 android:id="@+id/imgPerfil"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
-                app:layout_constraintTop_toBottomOf="@id/txtNumeroTelefono"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/imgDui"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtNumeroTelefono"
                 tools:srcCompat="@drawable/baseline_account_circle_24" />
 
             <ImageView
@@ -162,39 +223,32 @@
                 android:layout_width="157dp"
                 android:layout_height="59dp"
                 android:background="@drawable/boton"
+                android:backgroundTint="#400707"
                 android:text="Toma una foto para el Perfil"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="@id/imgPerfil"
                 app:layout_constraintStart_toStartOf="@id/imgPerfil"
                 app:layout_constraintTop_toBottomOf="@id/imgPerfil" />
 
+            <!-- Botón para seleccionar PDF -->
             <Button
                 android:id="@+id/btnTomarFotoDui"
                 android:layout_width="154dp"
                 android:layout_height="53dp"
+                android:layout_marginTop="4dp"
                 android:background="@drawable/boton"
+                android:backgroundTint="#400707"
                 android:text="Toma una foto de tu DUI"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="@id/imgDui"
+                app:layout_constraintHorizontal_bias="0.382"
                 app:layout_constraintStart_toStartOf="@id/imgDui"
                 app:layout_constraintTop_toBottomOf="@id/imgDui" />
 
-            <!-- Botón para seleccionar PDF -->
-            <TextView
-                android:id="@+id/textView9"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:text="Ingresa tus antecedentes"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/btnTomarFoto" />
-
             <ImageView
                 android:id="@+id/imageView"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="59dp"
+                android:layout_height="66dp"
                 android:layout_marginTop="20dp"
                 android:src="@drawable/baseline_picture_as_pdf_24"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -205,24 +259,15 @@
                 android:id="@+id/btnPDF"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="16dp"
                 android:background="@drawable/boton"
+                android:backgroundTint="#400707"
                 android:text="Seleccionar PDF"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/imageView" />
-
-            <TextView
-                android:id="@+id/txtUrlPdf"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:text="Documento PDF"
-                android:textColor="@color/black"
-                android:textSize="19sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/btnPDF" />
 
             <Button
                 android:id="@+id/btnRegistrarse"
@@ -230,7 +275,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
                 android:background="@drawable/boton"
+                android:backgroundTint="#400707"
                 android:text="Registrarse"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/txtUrlPdf" />

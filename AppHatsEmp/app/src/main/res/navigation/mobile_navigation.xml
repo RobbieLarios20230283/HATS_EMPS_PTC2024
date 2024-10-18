@@ -3,13 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
-
-    <fragment
-        android:id="@+id/navigation_home"
-        android:name="ptc.hats2024.ui.home.HomeFragment"
-        android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+    app:startDestination="@id/fragment_home">
 
     <fragment
         android:id="@+id/navigation_dashboard"
@@ -92,5 +86,10 @@
         android:name="ptc.hats2024.mas_informacion"
         android:label="fragment_mas_informacion"
         tools:layout="@layout/fragment_mas_informacion" />
+    <fragment
+        android:id="@+id/fragment_home"
+        android:name="ptc.hats2024.fragment_home"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
 
 </navigation>

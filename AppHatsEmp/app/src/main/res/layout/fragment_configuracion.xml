@@ -16,7 +16,7 @@
         android:layout_marginTop="20dp"
         android:background="@drawable/txtviws"
         android:drawableEnd="@drawable/baseline_navigate_next_24dd"
-        android:text="Editar datos personales"
+        android:text="Datos personales"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"

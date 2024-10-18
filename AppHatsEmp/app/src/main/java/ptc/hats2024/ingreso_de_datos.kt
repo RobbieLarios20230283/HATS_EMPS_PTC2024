@@ -73,14 +73,14 @@ class ingreso_de_datos : AppCompatActivity() {
 
         // Lista del catálogo
         val catalogoItems = listOf(
-            Pair("1", "Carpintería"),
-            Pair("2", "Pintura"),
-            Pair("3", "Electricidad"),
-            Pair("4", "Mecánica"),
-            Pair("5", "Fontanería"),
-            Pair("6", "Limpieza"),
-            Pair("7", "Cerrajería"),
-            Pair("8", "Planchado")
+            "Carpintería",
+            "Pintura",
+            "Electricidad",
+            "Mecánica",
+            "Fontanería",
+            "Limpieza",
+            "Cerrajería",
+            "Planchado"
         )
 
 
@@ -141,7 +141,7 @@ class ingreso_de_datos : AppCompatActivity() {
                 if (perfilUrl.isEmpty() || duiUrl.isEmpty()) {
                     Toast.makeText(
                         this,
-                        "Por favor, tome una foto de su perfil y del DUI.",
+                        "Por favor, tome una foto para el perfil y del DUI.",
                         Toast.LENGTH_SHORT
                     ).show()
                     return@setOnClickListener
@@ -159,10 +159,6 @@ class ingreso_de_datos : AppCompatActivity() {
                             duiUrl,
                             perfilUrl
                         )
-                       catalogoItems.forEach{ catalogo ->
-                           val (uuid, _) = catalogo
-                           GuardarCatalogo(uuid)
-                       }
                     } else {
                         Toast.makeText(
                             this,
@@ -402,6 +398,10 @@ class ingreso_de_datos : AppCompatActivity() {
         txtServicio.text.clear()
         txtNumeroTelefono.text.clear()
         txtFechaNacimiento.text.clear()
+    }
+
+    private fun GuardarCatalogId(){
+
     }
 
     private fun SeleccionarPDF() {

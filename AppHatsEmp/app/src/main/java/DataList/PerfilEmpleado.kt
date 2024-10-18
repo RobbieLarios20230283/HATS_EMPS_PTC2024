@@ -7,6 +7,7 @@ data class PerfilTrabajador(
     val telefono: String,
     val servicio: String,
     val nombrePerfil: String,
-    val imagenPerfil: String
+    val fechadeNacimiento : String,
+    val fotoPerfilUrl: String
 )
 

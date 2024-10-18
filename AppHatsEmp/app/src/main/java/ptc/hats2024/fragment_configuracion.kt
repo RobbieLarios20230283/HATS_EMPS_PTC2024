@@ -42,6 +42,7 @@ class fragment_configuracion : Fragment() {
         val notificaciones: Button = root.findViewById(R.id.button10)
         val infoLegal: Button = root.findViewById(R.id.button11)
         val asistencia: Button = root.findViewById(R.id.button12)
+        val cerrarSeion: Button = root.findViewById(R.id.button13)
 
         editarDato.setOnClickListener{
             findNavController().navigate(R.id.perfil)
@@ -57,6 +58,13 @@ class fragment_configuracion : Fragment() {
 
         asistencia.setOnClickListener{
             findNavController().navigate(R.id.fragment_asistencia)
+        }
+
+        cerrarSeion.setOnClickListener{
+            val intent = Intent(activity, Login::class.java)
+            startActivity(intent)
+
+            requireActivity().finish()
         }
 
         return root

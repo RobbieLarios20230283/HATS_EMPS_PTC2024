@@ -5,7 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
+import android.widget.Button
 import androidx.navigation.fragment.findNavController
 
 // TODO: Rename parameter arguments, choose names that match
@@ -15,10 +15,10 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [fragment_asistencia.newInstance] factory method to
+ * Use the [fragment_home.newInstance] factory method to
  * create an instance of this fragment.
  */
-class fragment_asistencia : Fragment() {
+class fragment_home : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -35,25 +35,24 @@ class fragment_asistencia : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val root = inflater.inflate(R.layout.fragment_asistencia, container, false)
+        val root = inflater.inflate(R.layout.fragment_home, container, false)
 
-        val preguntas: EditText = root.findViewById(R.id.textView15)
-        val metodoPago: EditText = root.findViewById(R.id.textView18)
-        val masInfo: EditText = root.findViewById(R.id.textView19)
+        val infolegal: Button = root.findViewById(R.id.button111)
+        val asistencia: Button = root.findViewById(R.id.button222)
+        val ajustes: Button = root.findViewById(R.id.button777)
 
-        preguntas.setOnClickListener {
-            findNavController().navigate(R.id.pregunta_frecuentes)
+
+        infolegal.setOnClickListener {
+            findNavController().navigate(R.id.fragment_infolegal)
         }
 
-        metodoPago.setOnClickListener{
-            findNavController().navigate(R.id.terminos_Pago)
+        asistencia.setOnClickListener {
+            findNavController().navigate(R.id.fragment_asistencia)
         }
 
-        masInfo.setOnClickListener{
-            findNavController().navigate(R.id.mas_informacion)
+        ajustes.setOnClickListener {
+            findNavController().navigate(R.id.fragment_configuracion)
         }
-
         return root
     }
-
 }

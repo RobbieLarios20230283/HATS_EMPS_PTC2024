@@ -37,12 +37,11 @@ class fragment_asistencia : Fragment() {
     ): View? {
         val root = inflater.inflate(R.layout.fragment_asistencia, container, false)
 
-        val preguntas: EditText = root.findViewById(R.id.textView26)
+        val preguntas: EditText = root.findViewById(R.id.textView15)
         val metodoPago: EditText = root.findViewById(R.id.textView18)
         val masInfo: EditText = root.findViewById(R.id.textView19)
 
         preguntas.setOnClickListener {
-            // Navega al fragmento de destino
             findNavController().navigate(R.id.pregunta_frecuentes)
         }
 

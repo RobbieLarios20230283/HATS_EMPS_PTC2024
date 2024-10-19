@@ -13,7 +13,9 @@ import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -35,8 +37,7 @@ class Perfil : Fragment() {
         val btnRegresar : Button = root.findViewById(R.id.btnRegresar)
 
         btnRegresar.setOnClickListener {
-            val pantallaAnterior = Intent(requireContext(),fragment_configuracion::class.java)
-            startActivity(pantallaAnterior)
+            findNavController().navigate(R.id.fragment_configuracion)
         }
 
         // Corrutina para obtener los datos del perfil del usuario
@@ -74,6 +75,7 @@ class Perfil : Fragment() {
                 Glide.with(root.context)
                     .load(perfilTrabajador.fotoPerfilUrl)
                     .placeholder(R.drawable.perfil_icon)
+                    .transform(RoundedCorners(200))
                     .error(R.drawable.perfil_icon)
                     .into(imagenPerfil)
             } else {

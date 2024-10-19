@@ -43,7 +43,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="28dp"
-        android:text="Pagos"
+        android:text="Mision y Vision"
         android:textColor="#7D3AB7"
         android:textColorHighlight="#8C61D3"
         android:textSize="28sp"

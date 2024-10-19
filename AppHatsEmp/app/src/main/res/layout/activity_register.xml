@@ -52,19 +52,63 @@
 
             <!-- Colocar el texto encima del campo de entrada de correo -->
 
+            <!-- Cambiado TextInputLayout en lugar de EditText -->
             <TextView
                 android:id="@+id/textView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="28dp"
+                android:layout_marginTop="4dp"
                 android:text="Ingresa tu correo Electrónico"
                 android:textColor="#8862AF"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.206"
+                app:layout_constraintHorizontal_bias="0.226"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/linearLayout" />
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txtCorreoRegistroInputLayout"
+                android:layout_width="324dp"
+                android:layout_height="53dp"
+                app:endIconMode="clear_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.45"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textView2">
+
+                <EditText
+                    android:id="@+id/txtCorreoRegistro"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/txtviws"
+                    android:inputType="textEmailAddress"
+                    android:padding="10dp"
+                    android:textColorHint="#CFB7E4" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txtIngresarConInputLayout"
+                android:layout_width="325dp"
+                android:layout_height="55dp"
+                android:layout_marginTop="32dp"
+
+                android:inputType="textPassword"
+                app:endIconMode="password_toggle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.436"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtCorreoRegistroInputLayout">
+
+                <EditText
+                    android:id="@+id/txtContraseñaRegistro"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/txtviws"
+                    android:inputType="textPassword"
+                    android:padding="10dp" />
+            </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
                 android:id="@+id/textView6"
@@ -78,7 +122,29 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.172"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/txtContraseñaReg" />
+                app:layout_constraintTop_toBottomOf="@id/txtIngresarConInputLayout" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txtConfirmarContraseñaInputLayout"
+                android:layout_width="324dp"
+                android:layout_height="56dp"
+                android:layout_marginTop="8dp"
+                android:inputType="textPassword"
+                app:endIconMode="password_toggle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.45"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textView6">
+
+                <EditText
+                    android:id="@+id/txtConfirmarContraseña"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/txtviws"
+                    android:inputType="textPassword"
+                    android:padding="10dp"
+                    android:textColorHint="#CFB7E4" />
+            </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
                 android:id="@+id/textView7"
@@ -92,111 +158,47 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.208"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/txtConfirmarContraseña" />
-
-            <TextView
-                android:id="@+id/textView8"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:text="Escriba su Dirección"
-                android:textColor="#8862AF"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.174"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/txtNombreCompleto" />
-
-            <TextView
-                android:id="@+id/txtIngresarCon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:text="Ingresa una contraseña segura"
-                android:textColor="#8862AF"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.222"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/txtCorreoRegistro" />
-
-            <EditText
-                android:id="@+id/txtCorreoRegistro"
-                android:layout_width="320dp"
-                android:layout_height="49dp"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/txtviws"
-                android:hint="..."
-                android:inputType="textEmailAddress"
-                android:padding="10dp"
-                android:textColorHint="#CFB7E4"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textView2" />
+                app:layout_constraintTop_toBottomOf="@id/txtConfirmarContraseñaInputLayout" />
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/txtContraseñaReg"
-                android:layout_width="325dp"
-                android:layout_height="62dp"
-                android:background="@drawable/txtviws"
-                android:inputType="textPassword"
-                android:padding="5dp"
-                app:endIconMode="password_toggle"
+                android:id="@+id/txtNombreCompletoInputLayout"
+                android:layout_width="326dp"
+                android:layout_height="50dp"
+                app:endIconMode="clear_text"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.448"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/txtIngresarCon">
+                app:layout_constraintTop_toBottomOf="@+id/textView7">
 
                 <EditText
-                    android:id="@+id/txtContraseñaRegistro"
-                    android:layout_width="314dp"
-                    android:layout_height="46dp"
+                    android:id="@+id/txtNombreCompleto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:background="@drawable/txtviws"
-                    android:padding="10dp" />
-
+                    android:padding="10dp"
+                    android:textColorHint="#CFB7E4" />
             </com.google.android.material.textfield.TextInputLayout>
 
 
-            <EditText
-                android:id="@+id/txtConfirmarContraseña"
-                android:layout_width="320dp"
-                android:layout_height="49dp"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/txtviws"
-                android:hint="..."
-                android:inputType="textPassword"
-                android:padding="10dp"
-                android:textColorHint="#CFB7E4"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txtDireccionInputLayout"
+                android:layout_width="328dp"
+                android:layout_height="59dp"
+                android:layout_marginTop="8dp"
+                app:endIconMode="clear_text"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.457"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textView6" />
+                app:layout_constraintTop_toBottomOf="@+id/textView8">
 
-            <EditText
-                android:id="@+id/txtNombreCompleto"
-                android:layout_width="320dp"
-                android:layout_height="49dp"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/txtviws"
-                android:hint="..."
-                android:padding="10dp"
-                android:textColorHint="#CFB7E4"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textView7" />
-
-            <EditText
-                android:id="@+id/txtDireccion"
-                android:layout_width="320dp"
-                android:layout_height="49dp"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/txtviws"
-                android:hint="..."
-                android:padding="10dp"
-                android:textColorHint="#CFB7E4"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textView8" />
+                <EditText
+                    android:id="@+id/txtDireccion"
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp"
+                    android:background="@drawable/txtviws"
+                    android:padding="10dp"
+                    android:textColorHint="#CFB7E4" />
+            </com.google.android.material.textfield.TextInputLayout>
 
             <Button
                 android:id="@+id/btnSiguiente"
@@ -212,7 +214,20 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.494"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/txtDireccion" />
+                app:layout_constraintTop_toBottomOf="@id/txtDireccionInputLayout" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Escriba su Dirección"
+                android:textColor="#8862AF"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.174"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtNombreCompletoInputLayout" />
 
             <Button
                 android:id="@+id/btnRegresar"
@@ -228,6 +243,22 @@
                 app:layout_constraintHorizontal_bias="0.164"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/btnSiguiente" />
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+                android:text="Ingrese una contraseña segura"
+                android:textColor="#8862AF"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.216"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtCorreoRegistroInputLayout"
+                app:layout_constraintVertical_bias="0.0" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

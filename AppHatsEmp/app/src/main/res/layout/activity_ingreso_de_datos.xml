@@ -107,47 +107,63 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.266" />
 
-
-            <EditText
+            <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/txtServicio"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@drawable/txtviws"
-                android:hint="..."
+                android:layout_width="375dp"
+                android:layout_height="52dp"
+                android:layout_marginTop="8dp"
                 android:inputType="text"
-                android:padding="10dp"
-                android:textStyle="bold"
+                app:endIconMode="clear_text"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textViewService" />
+                app:layout_constraintTop_toBottomOf="@+id/textViewService">
+
+                <EditText
+                    android:id="@+id/txtServicioLog"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/txtviws"
+                    android:inputType="textEmailAddress"
+                    android:padding="10dp"
+                    android:textColorHint="#CFB7E4" />
+
+            </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
                 android:id="@+id/textViewEdad"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="104dp"
+                android:layout_marginTop="120dp"
                 android:text="Ingresa tu fecha de nacimiento"
                 android:textColor="#6E5789"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/txtAreaTrabajoLayout" />
 
-            <EditText
+            <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/txtFechaNacimiento"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/txtviws"
-                android:hint="..."
+                android:layout_width="374dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="16dp"
                 android:inputType="number"
-                android:padding="10dp"
-                android:textStyle="bold"
+                app:endIconMode="clear_text"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textViewEdad" />
+                app:layout_constraintTop_toBottomOf="@id/textViewEdad">
+
+                <EditText
+                    android:id="@+id/txtFechaNacimientoReg"
+                    android:layout_width="match_parent"
+                    android:layout_height="47dp"
+                    android:background="@drawable/txtviws"
+                    android:inputType="number"
+                    android:padding="10dp"
+                    android:textStyle="bold" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
 
             <!-- Número de teléfono -->
 
@@ -167,45 +183,60 @@
                 android:id="@+id/textViewNum"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="28dp"
                 android:text="Ingresa tu número de telefono"
                 android:textColor="#6E5789"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/txtNombrePerfil" />
 
-            <EditText
-                android:id="@+id/txtNombrePerfil"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/txtviws"
-                android:hint="..."
-                android:inputType="text"
-                android:padding="10dp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textViewEmail" />
 
             <!-- Imágenes -->
 
-            <EditText
-                android:id="@+id/txtNumeroTelefono"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txtNombrePerfil"
+                android:layout_width="374dp"
+                android:layout_height="60dp"
                 android:layout_marginTop="24dp"
-                android:background="@drawable/txtviws"
-                android:hint="..."
-                android:inputType="number"
-                android:padding="10dp"
-                android:textStyle="bold"
+                app:endIconMode="clear_text"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textViewNum" />
+                app:layout_constraintTop_toBottomOf="@id/textViewEmail">
+
+                <EditText
+                    android:id="@+id/txtNombrePerfilLog"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:background="@drawable/txtviws"
+                    android:inputType="text"
+                    android:padding="10dp"
+                    android:textStyle="bold" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txtNumeroTelefono"
+                android:layout_width="374dp"
+                android:layout_height="60dp"
+                app:endIconMode="clear_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textViewNum">
+
+                <EditText
+                    android:id="@+id/txtNumeroTelefonoReg"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="24dp"
+                    android:background="@drawable/txtviws"
+                    android:inputType="number"
+                    android:padding="10dp"
+                    android:textStyle="bold" />
+            </com.google.android.material.textfield.TextInputLayout>
 
             <ImageView
                 android:id="@+id/imgPerfil"
@@ -227,6 +258,7 @@
 
             <!-- Botones para las imágenes -->
             <Button
+                style="@style/Widget.Material3.Button.ElevatedButton"
                 android:id="@+id/btnTomarFoto"
                 android:layout_width="157dp"
                 android:layout_height="59dp"
@@ -240,6 +272,7 @@
 
             <!-- Botón para seleccionar PDF -->
             <Button
+                style="@style/Widget.Material3.Button.ElevatedButton"
                 android:id="@+id/btnTomarFotoDui"
                 android:layout_width="154dp"
                 android:layout_height="53dp"

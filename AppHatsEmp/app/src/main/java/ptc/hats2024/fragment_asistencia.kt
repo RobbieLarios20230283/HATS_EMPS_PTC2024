@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.EditText
 import androidx.navigation.fragment.findNavController
 
@@ -37,9 +38,9 @@ class fragment_asistencia : Fragment() {
     ): View? {
         val root = inflater.inflate(R.layout.fragment_asistencia, container, false)
 
-        val preguntas: EditText = root.findViewById(R.id.textView15)
-        val metodoPago: EditText = root.findViewById(R.id.textView18)
-        val masInfo: EditText = root.findViewById(R.id.textView19)
+        val preguntas: Button = root.findViewById(R.id.preguntas)
+        val metodoPago: Button = root.findViewById(R.id.pagos)
+        val masInfo: Button = root.findViewById(R.id.masInfo)
 
         preguntas.setOnClickListener {
             findNavController().navigate(R.id.pregunta_frecuentes)
@@ -56,4 +57,23 @@ class fragment_asistencia : Fragment() {
         return root
     }
 
+    companion object {
+        /**
+         * Use this factory method to create a new instance of
+         * this fragment using the provided parameters.
+         *
+         * @param param1 Parameter 1.
+         * @param param2 Parameter 2.
+         * @return A new instance of fragment fragment_asistencia.
+         */
+        // TODO: Rename and change types and number of parameters
+        @JvmStatic
+        fun newInstance(param1: String, param2: String) =
+            fragment_asistencia().apply {
+                arguments = Bundle().apply {
+                    putString(ARG_PARAM1, param1)
+                    putString(ARG_PARAM2, param2)
+                }
+            }
+    }
 }

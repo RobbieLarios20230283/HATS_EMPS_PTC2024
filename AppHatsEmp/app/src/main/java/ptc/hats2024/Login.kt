@@ -10,8 +10,10 @@ import android.content.Intent
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
+
 import kotlinx.coroutines.launch
 import java.sql.SQLException
 import java.nio.charset.StandardCharsets
@@ -47,8 +49,8 @@ class Login : AppCompatActivity() {
         }
 
         val btnRegistro: Button = findViewById(R.id.btnRegistrarseLogin)
-        val txtCorreo: EditText = findViewById(R.id.txtCorreoOrNameLogin)
-        val txtContrasena: EditText = findViewById(R.id.txtContrasenaLogin)
+        val txtCorreo: EditText = findViewById(R.id.txtCorreoLog)
+        val txtContrasena: EditText = findViewById(R.id.txtContrasenaLog)
         val btnLogin: Button = findViewById(R.id.btnIniciarSesion)
 
         btnLogin.setOnClickListener {
@@ -78,11 +80,12 @@ class Login : AppCompatActivity() {
                         startActivity(ScreenMain)
                     } else {
                         runOnUiThread {
-                            Toast.makeText(
-                                this@Login,
-                                "Correo o contraseña incorrectos",
-                                Toast.LENGTH_SHORT
-                            ).show()
+                            MaterialAlertDialogBuilder(this@Login)
+                                .setTitle("Correo o contraseña incorrectos")
+                                .setMessage("El correo o la contraseña son incorrectos o no existen")
+                                .setPositiveButton("Aceptar") { dialog, which ->
+                                }
+                                .show()
                         }
                     }
                 } catch (e: SQLException) {
@@ -109,5 +112,6 @@ class Login : AppCompatActivity() {
             val pantallaRegistro = Intent(this, Register::class.java)
             startActivity(pantallaRegistro)
         }
+
     }
 }

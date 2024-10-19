@@ -95,10 +95,10 @@ class ingreso_de_datos : AppCompatActivity() {
 
 
 
-        txtNombrePerfil = findViewById(R.id.txtNombrePerfil)
-        txtServicio = findViewById(R.id.txtServicio)
-        txtFechaNacimiento = findViewById(R.id.txtFechaNacimiento)
-        txtNumeroTelefono = findViewById(R.id.txtNumeroTelefono)
+        txtNombrePerfil = findViewById(R.id.txtNombrePerfilLog)
+        txtServicio = findViewById(R.id.txtServicioLog)
+        txtFechaNacimiento = findViewById(R.id.txtFechaNacimientoReg)
+        txtNumeroTelefono = findViewById(R.id.txtNumeroTelefonoReg)
 
         val btnTomarFoto: Button = findViewById(R.id.btnTomarFoto)
         val btnRegistrarse: Button = findViewById(R.id.btnRegistrarse)

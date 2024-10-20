@@ -91,5 +91,10 @@
         android:name="ptc.hats2024.fragment_asistencia"
         android:label="fragment_asistencia"
         tools:layout="@layout/fragment_asistencia" />
+    <fragment
+        android:id="@+id/fragment_Editar"
+        android:name="ptc.hats2024.fragment_Editar"
+        android:label="fragment__editar"
+        tools:layout="@layout/fragment__editar" />
 
 </navigation>

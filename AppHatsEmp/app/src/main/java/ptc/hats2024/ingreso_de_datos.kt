@@ -250,17 +250,16 @@ class ingreso_de_datos : AppCompatActivity() {
             }
         })
 
-        // TextWatcher para permitir solo números en la fecha de nacimiento
-        // TextWatcher para permitir solo números y guiones
+
         txtFechaNacimiento.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 val filtered = s.toString()
-                    .filter { it.isDigit() || it == '-' } // Permitir solo números y guiones
+                    .filter { it.isDigit() || it == '-' }
                 if (s.toString() != filtered) {
                     txtFechaNacimiento.setText(filtered)
-                    txtFechaNacimiento.setSelection(filtered.length) // Mover el cursor al final del texto
+                    txtFechaNacimiento.setSelection(filtered.length)
                 }
             }
 

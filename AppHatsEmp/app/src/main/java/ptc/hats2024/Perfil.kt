@@ -39,8 +39,14 @@ class Perfil : Fragment() {
         btnRegresar.setOnClickListener {
             findNavController().navigate(R.id.fragment_configuracion)
         }
+        val btnEditarPerfilEmp : Button = root.findViewById(R.id.btnEditarPerfil)
 
-        // Corrutina para obtener los datos del perfil del usuario
+        btnEditarPerfilEmp.setOnClickListener {
+            findNavController().navigate(R.id.fragment_Editar)
+        }
+
+
+
         CoroutineScope(Dispatchers.Main).launch {
             val perfilTrabajadorLista = withContext(Dispatchers.IO) {
                 PerfilUser()

@@ -7,9 +7,9 @@ class ClaseConexion {
     fun cadenaConexion(): java.sql.Connection? {
         try {
 
-            val ip = "jdbc:oracle:thin:@192.168.0.3:1521:xe"
+            val ip = "jdbc:oracle:thin:@192.168.144.227:1521:xe"
             val usuario = "system"
-            val contrasena = "1234567"
+            val contrasena = "ITR2024"
 
             val conexion = DriverManager.getConnection(ip, usuario, contrasena)
             return conexion
